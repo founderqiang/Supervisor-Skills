@@ -27,6 +27,25 @@ This repository is **not merely a theoretical guide**. Its core is a first attem
 
 Our vision is simple: **Let AI become your true, always-on research co-advisor.**
 
+## Community
+
+**WeChat Discussion Group**
+
+Scan the QR code on the left to join our community. If the group QR code has expired, add the admin on WeChat (`xyp619`) with the remark **"Supervisor-Skills + your name"**.
+
+<table>
+  <tr>
+    <td align="center" width="300">
+      <img src="assets/images/wechat-group.JPG" height="280" />
+      <br/><sub>Group QR code (valid for 7 days; add the admin if expired)</sub>
+    </td>
+    <td align="center" width="300">
+      <img src="assets/images/wechat-admin.JPG" height="280" />
+      <br/><sub>Admin WeChat: xyp619</sub>
+    </td>
+  </tr>
+</table>
+
 ## Tutorial structure
 
 The tutorial follows a dual-track architecture of **Guide (theoretical handbook) + Skills (executable AI skills)**:

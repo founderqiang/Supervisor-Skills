@@ -23,6 +23,25 @@
 
 这个项目仍处在早期阶段，我们正努力将自己能力范围内的认知与见解毫无保留地呈现出来，希望能为初入科研领域的探索者提供一份实用的操作指南。我们更热切地期待，能与各位同行者一起，共同建设、完善这个知识库，让科研之路不再孤单。如果你觉得这个项目对你有帮助，请点亮右上角的⭐️Star⭐️！谢谢！
 
+## 社区与交流
+
+**微信交流群**
+
+欢迎扫描左侧二维码加入社区交流群。若群二维码已过期，请添加管理员微信 `xyp619`，并备注 **"Supervisor-Skills + 姓名"** 申请入群。
+
+<table>
+  <tr>
+    <td align="center" width="300">
+      <img src="assets/images/wechat-group.JPG" height="280" />
+      <br/><sub>群二维码（7天内有效，过期请添加管理员）</sub>
+    </td>
+    <td align="center" width="300">
+      <img src="assets/images/wechat-admin.JPG" height="280" />
+      <br/><sub>管理员微信：xyp619</sub>
+    </td>
+  </tr>
+</table>
+
 ## 教程结构
 
 本教程采用 **Guide（理论指南） + Skills（可执行AI技能）** 的双轨制架构：
