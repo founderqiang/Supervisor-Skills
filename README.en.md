@@ -33,7 +33,7 @@ Our vision is simple: **Let AI become your true, always-on research co-advisor.*
 
 The group has exceeded 200 members and can no longer be joined via QR code. Please scan to add the admin on WeChat (`xyp619`) with the remark **"Supervisor-Skills + your name"** to be invited in.
 
-You can also follow our official WeChat account for research news, paper-writing tips, and practical notes on AI-assisted research.
+You can also follow the official WeChat account of the **Data Intelligence and Analytics Lab (DIAL)** for research news, paper-writing tips, and practical notes on AI-assisted research.
 
 By joining, you get:
 - 🔔 First-hand updates on new Skills and Handbook releases
@@ -42,13 +42,13 @@ By joining, you get:
 
 <table align="center">
   <tr>
-    <td align="center">
+    <td align="center" width="360">
       <img src="assets/images/wechat-admin.JPG" height="300" />
       <br/><sub>Discussion group: add admin xyp619</sub>
     </td>
-    <td align="center">
-      <img src="assets/images/wechat-official-account.jpg" height="300" />
-      <br/><sub>Official account: follow DIAL research updates</sub>
+    <td align="center" width="360">
+      <img src="assets/images/wechat-official-account.jpg" height="250" />
+      <br/><sub>Data Intelligence and Analytics Lab (DIAL) official account</sub>
     </td>
   </tr>
 </table>

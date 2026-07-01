@@ -29,22 +29,22 @@
 
 群已超过 200 人，无法通过二维码直接入群。请扫码添加管理员微信 `xyp619`，备注 **"Supervisor-Skills + 姓名"**，由管理员邀请入群。
 
-你也可以关注我们的官方公众号，获取科研资讯、论文写作经验与 AI 辅助科研实践分享。
+您也可以关注 **数据智能与分析实验室 DIAL** 官方公众号，获取科研资讯、论文写作经验与 AI 辅助科研实践分享。
 
-加入后你可以：
+加入后您可以：
 - 🔔 第一时间获取 Skills 与 Handbook 的最新更新通知
 - 💬 与同路人交流论文写作、AI 辅助科研心得
 - 🎙️ 参与不定期的线上答疑与经验分享活动
 
 <table align="center">
   <tr>
-    <td align="center">
+    <td align="center" width="360">
       <img src="assets/images/wechat-admin.JPG" height="300" />
       <br/><sub>微信交流群：添加管理员 xyp619</sub>
     </td>
-    <td align="center">
-      <img src="assets/images/wechat-official-account.jpg" height="300" />
-      <br/><sub>官方公众号：关注 DIAL 科研资讯</sub>
+    <td align="center" width="360">
+      <img src="assets/images/wechat-official-account.jpg" height="250" />
+      <br/><sub>数据智能与分析实验室 DIAL 官方公众号</sub>
     </td>
   </tr>
 </table>
