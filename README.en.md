@@ -43,12 +43,26 @@ By joining, you get:
 <table align="center">
   <tr>
     <td align="center" width="360">
-      <img src="assets/images/wechat-admin.JPG" height="300" />
-      <br/><sub>Discussion group: add admin xyp619</sub>
+      <strong>Discussion Group</strong>
     </td>
     <td align="center" width="360">
-      <img src="assets/images/wechat-official-account.jpg" height="250" />
-      <br/><sub>Data Intelligence and Analytics Lab (DIAL) official account</sub>
+      <strong>Official Account</strong>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" height="360">
+      <img src="assets/images/wechat-admin.JPG" height="330" />
+    </td>
+    <td align="center" valign="middle" height="360">
+      <img src="assets/images/wechat-official-account.jpg" height="300" />
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <sub>Add admin xyp619 to join the group</sub>
+    </td>
+    <td align="center">
+      <sub>Data Intelligence and Analytics Lab (DIAL)</sub>
     </td>
   </tr>
 </table>

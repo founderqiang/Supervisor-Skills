@@ -39,12 +39,26 @@
 <table align="center">
   <tr>
     <td align="center" width="360">
-      <img src="assets/images/wechat-admin.JPG" height="300" />
-      <br/><sub>微信交流群：添加管理员 xyp619</sub>
+      <strong>微信交流群</strong>
     </td>
     <td align="center" width="360">
-      <img src="assets/images/wechat-official-account.jpg" height="250" />
-      <br/><sub>数据智能与分析实验室 DIAL 官方公众号</sub>
+      <strong>官方公众号</strong>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" height="360">
+      <img src="assets/images/wechat-admin.JPG" height="330" />
+    </td>
+    <td align="center" valign="middle" height="360">
+      <img src="assets/images/wechat-official-account.jpg" height="300" />
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <sub>添加管理员 xyp619，邀请入群交流</sub>
+    </td>
+    <td align="center">
+      <sub>数据智能与分析实验室 DIAL 官方公众号</sub>
     </td>
   </tr>
 </table>
