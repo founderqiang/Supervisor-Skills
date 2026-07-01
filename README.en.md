@@ -33,15 +33,25 @@ Our vision is simple: **Let AI become your true, always-on research co-advisor.*
 
 The group has exceeded 200 members and can no longer be joined via QR code. Please scan to add the admin on WeChat (`xyp619`) with the remark **"Supervisor-Skills + your name"** to be invited in.
 
+You can also follow our official WeChat account for research news, paper-writing tips, and practical notes on AI-assisted research.
+
 By joining, you get:
 - 🔔 First-hand updates on new Skills and Handbook releases
 - 💬 Exchange paper writing and AI-assisted research tips with peers
 - 🎙️ Join occasional online Q&A and experience-sharing sessions
 
-<div align="center">
-  <img src="assets/images/wechat-admin.JPG" height="320" />
-  <br/><sub>Admin WeChat: xyp619</sub>
-</div>
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="assets/images/wechat-admin.JPG" height="300" />
+      <br/><sub>Discussion group: add admin xyp619</sub>
+    </td>
+    <td align="center">
+      <img src="assets/images/wechat-official-account.jpg" height="300" />
+      <br/><sub>Official account: follow DIAL research updates</sub>
+    </td>
+  </tr>
+</table>
 
 ## Tutorial structure
 
