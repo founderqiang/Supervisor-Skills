@@ -105,7 +105,8 @@ Supervisor-Skills/
 │   ├── tech-paper-template/
 │   ├── benchmark-paper-template/
 │   ├── pre-submission-reviewer/       # 自查与润色技能
-│   └── figure-designer/
+│   ├── figure-designer/
+│   └── drawio-reconstruction/         # Draw.io 重建执行技能
 │
 └── assets/images/                     # 图片资源
 ```
@@ -138,6 +139,7 @@ Supervisor-Skills/
 | **Benchmark Paper Template** | 专为 Benchmark/Evaluation 类论文设计，辅助梳理评估逻辑和实验设计 | [使用技能](plugins/phd-research/skills/benchmark-paper-template/SKILL.md) |
 | **Pre-Submission Reviewer** | 顶会审稿人视角！基于写作 Checklist 和英语语法易错点，对草稿进行全面审查 | [使用技能](plugins/phd-research/skills/pre-submission-reviewer/SKILL.md) |
 | **Figure Design Advisor** | 告诉 AI 你想表达什么，它会根据动机图/总览图/实验图的设计范式给出专业作图建议 | [使用技能](plugins/phd-research/skills/figure-designer/SKILL.md) |
+| **Draw.io Reconstruction** | 将参考图、论文图、架构图、幻灯片图或 UI 截图重建为可编辑 `.drawio` 文件，并导出 PNG 预览与视觉审计 | [使用技能](plugins/phd-research/skills/drawio-reconstruction/SKILL.md) |
 
 ## 快速开始 (Quick Start)
 
