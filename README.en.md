@@ -112,7 +112,8 @@ Supervisor-Skills/
 │   ├── tech-paper-template/
 │   ├── benchmark-paper-template/
 │   ├── pre-submission-reviewer/
-│   └── figure-designer/
+│   ├── figure-designer/
+│   └── drawio-reconstruction/
 │
 └── assets/images/                     # Image assets
 ```
@@ -147,6 +148,7 @@ This is the core of the repository. The theoretical experience above is distille
 | **Benchmark Paper Template** | Designed for Benchmark/Evaluation papers, helping you structure evaluation logic and experimental design. | [Use skill](plugins/phd-research/skills/benchmark-paper-template/SKILL.md) |
 | **Pre-Submission Reviewer** | Reviewer's perspective at a top venue — runs a full review over your draft based on the writing checklist and common English grammar pitfalls. | [Use skill](plugins/phd-research/skills/pre-submission-reviewer/SKILL.md) |
 | **Figure Design Advisor** | Tell the AI what you want to express; it returns professional drawing advice based on the motivated / overview / experimental figure paradigms. | [Use skill](plugins/phd-research/skills/figure-designer/SKILL.md) |
+| **Draw.io Reconstruction** | Rebuild reference images, paper figures, architecture diagrams, slide diagrams, or UI screenshots into editable `.drawio` files with PNG previews and visual audits. | [Use skill](plugins/phd-research/skills/drawio-reconstruction/SKILL.md) |
 
 ## Quick Start
 

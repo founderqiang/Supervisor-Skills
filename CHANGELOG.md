@@ -6,6 +6,13 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+
+- Added `drawio-reconstruction`, an MIT-licensed skill adapted from
+  `sxy1499894281/drawio-reconstruction-skill`, for reconstructing
+  reference images into editable Draw.io files with PNG previews and
+  visual audits.
+
 ### Fixed
 
 - Restored `## Integrity gate` sections in six SKILL.md files

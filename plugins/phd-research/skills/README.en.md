@@ -12,14 +12,14 @@ Supervisor-Skills is layered by audience:
 |---|---|---|
 | Top-level [`README.en.md`](../../../README.en.md) | First-time visitors | Why the project exists, tutorial structure, how to install |
 | [`handbook/`](../../../handbook/) (Chinese, canonical) / [`docs/en/handbook/`](../../../docs/en/handbook/) (English mirror) | Readers who want the methodology | Six chapters of research and writing handbook (the theoretical spine) |
-| **This file** | Readers who want the skills directly | **What each of the 7 skills is, when to use it, how it chains with the others** |
+| **This file** | Readers who want the skills directly | **What each of the 8 skills is, when to use it, how it chains with the others** |
 | `SKILL.md` (inside each skill directory) | The plugin / LLMs | Executable spec: integrity gates, output formats, mode options — machine-readable, not optimised for human browsing |
 
 In one line: **the handbook teaches the way, SKILL.md runs the tool, this README is the bridge between them.**
 
 ## Two narrative tracks: technical paper vs benchmark paper
 
-The seven skills are not seven isolated tools. They map to two complete lifecycles of a top-venue paper. Locate yourself on the right track first, then pick the skill you need.
+The eight skills are not isolated tools. They map to two complete lifecycles of a top-venue paper and add an execution-oriented Draw.io reconstruction capability. Locate yourself on the right track first, then pick the skill you need.
 
 ### Track 1: technical / position paper (new method for an existing problem)
 
@@ -29,15 +29,16 @@ Following the natural order a PhD student takes for their first top-venue paper:
 2. **[tech-paper-template](tech-paper-template/SKILL.md)** — before writing any prose, lock the full logical skeleton of the paper
 3. **[intro-drafter](intro-drafter/SKILL.md)** — translate the skeleton into a six-paragraph Introduction outline
 4. **[figure-designer](figure-designer/SKILL.md)** — design the three load-bearing figures: Motivated Example, Solution Overview, Experimental Results
-5. **[pre-submission-reviewer](pre-submission-reviewer/SKILL.md)** — the 3-to-5-day deadline-window audit
+5. **[drawio-reconstruction](drawio-reconstruction/SKILL.md)** — when a reference image, draft, or screenshot already exists, rebuild it as editable Draw.io
+6. **[pre-submission-reviewer](pre-submission-reviewer/SKILL.md)** — the 3-to-5-day deadline-window audit
 
-**Cross-cutting tool**: [vibe-research-workflow](vibe-research-workflow/SKILL.md) is **orthogonal** to the five steps above, not step 6. Whether you are coding, drawing, or writing at any stage, it gives you AI-collaboration rules and tool picks.
+**Cross-cutting tool**: [vibe-research-workflow](vibe-research-workflow/SKILL.md) is **orthogonal** to the six steps above, not step 7. Whether you are coding, drawing, or writing at any stage, it gives you AI-collaboration rules and tool picks.
 
 ### Track 2: benchmark / evaluation paper
 
 The benchmark pipeline is more strictly sequential than the technical-paper track: each stage gates the next. **[benchmark-paper-template](benchmark-paper-template/SKILL.md)** is the orchestrator for this track: a single skill bundles the full six-stage workflow (Gap → Design → Construction → Experiments → Paper Structure → Checklist) and produces the five-pillar framework (Research Gap, Construction Pipeline, Evaluation Framework, Empirical Findings, optional Companion Method).
 
-For a benchmark paper, the starting and ending point are both this one skill; only the two core figures additionally need figure-designer, and the pre-submission audit still lands on pre-submission-reviewer.
+For a benchmark paper, the starting and ending point are both this one skill; the two core figures additionally need figure-designer, existing reference images or screenshots can be executed with drawio-reconstruction, and the pre-submission audit still lands on pre-submission-reviewer.
 
 ### Already stuck somewhere?
 
@@ -46,11 +47,12 @@ Readers with a specific bottleneck can skip the reading order and jump straight 
 - Introduction reads like a set of disconnected claims → **intro-drafter**
 - Methodology section will not flow → **tech-paper-template**
 - Figures look clumsy, not sure which tool to use → **figure-designer**
+- Have a reference figure, paper figure, architecture diagram, or screenshot and need editable Draw.io → **drawio-reconstruction**
 - Pre-submission panic, unclear what to check → **pre-submission-reviewer**
 - Cannot articulate the benchmark gap or organise evaluation dimensions → **benchmark-paper-template**
 - Unsure how to delegate to AI without diluting academic judgment → **vibe-research-workflow**
 
-## The seven skill cards
+## The eight skill cards
 
 Each card translates the SKILL.md spec into plain-reader language, adds the matching handbook chapters, and notes the upstream/downstream skills.
 
@@ -116,6 +118,18 @@ Each card translates the SKILL.md spec into plain-reader language, adds the matc
 - **Matching handbook chapters**: [4.1 Motivated example figure](../../../docs/en/handbook/04_Scientific_Plotting/4.1_motivated-example-figure.md) · [4.2 Solution overview figure](../../../docs/en/handbook/04_Scientific_Plotting/4.2_solution-overview-figure.md) · [4.3 Experimental results figure](../../../docs/en/handbook/04_Scientific_Plotting/4.3_experimental-results-figure.md) · [4.4 Plotting checklist](../../../docs/en/handbook/04_Scientific_Plotting/4.4_plotting-checklist-and-tools.md)
 - **Up- and downstream**: upstream is **intro-drafter** (running example locks Figure 1) and **tech-paper-template** (module graph locks the Solution Overview figure); downstream is **pre-submission-reviewer** (figure quality is part of the final audit).
 
+### drawio-reconstruction — rebuild reference figures as editable Draw.io
+
+- **Positioning**: an execution-oriented figure skill that reconstructs reference images, paper figures, architecture diagrams, slide diagrams, UI screenshots, or image folders into `.drawio` files with PNG previews and audit notes.
+- **When to trigger**:
+  - A target-style reference image already exists and the user needs an editable Draw.io version
+  - Multiple figures need batch reconstruction into `.drawio`, each with visual-consistency checks
+  - Text and structure should stay editable, while complex icons, screenshots, visual metaphors, and dense artwork should use faithful crops or transparent PNGs
+- **Key discipline**: visual fidelity beats semantic approximation; script checks only prove XML and export validity, while final quality requires visual comparison against the reference.
+- **Output**: `.drawio` source files, PNG previews, audit files for complex or batch tasks, and explicit notes for unresolved visual differences.
+- **Attribution and license**: adapted from [drawio-reconstruction-skill](https://github.com/sxy1499894281/drawio-reconstruction-skill), retaining the MIT License.
+- **Up- and downstream**: upstream can be a **figure-designer** plan or any user-provided reference image; downstream is **pre-submission-reviewer** for figure-quality review.
+
 ### pre-submission-reviewer — the top-venue reviewer's final audit
 
 - **Positioning**: simulates a top-venue reviewer and audits a draft across five dimensions: macro logic, writing details, English grammar, LaTeX formatting, figure quality.
@@ -139,7 +153,7 @@ Each card translates the SKILL.md spec into plain-reader language, adds the matc
 - **Core principle**: **keep academic judgment in the human's hands, delegate mechanical labour to AI**; every AI output must come with checkable evidence; tool picks are per task type with a concrete shortlist.
 - **Output**: a recommended tool chain for the current scenario, a human-AI division-of-labour sketch, and a common-failure-mode catalogue.
 - **Matching handbook chapters**: [5.1 Vibe Research and Vibe Coding primer](../../../docs/en/handbook/05_Vibe_Research/5.1_vibe-research-and-vibe-coding.md) · [5.2 Practitioner notes](../../../docs/en/handbook/05_Vibe_Research/5.2_liboyan-practical-notes.md)
-- **How it fits**: **orthogonal** to the other six skills. It is not step N; it is a rulebook you pull up at any step.
+- **How it fits**: **orthogonal** to the other seven skills. It is not step N; it is a rulebook you pull up at any step.
 
 ## How to actually use these skills
 
@@ -151,6 +165,7 @@ Follow the [Quick Start](../../../README.en.md#quick-start) in the top-level REA
 - "lock the paper's logical skeleton for me" → `tech-paper-template`
 - "draft the Introduction / I want to write the intro" → `intro-drafter`
 - "how should I draw this figure / what tool should I use" → `figure-designer`
+- "rebuild this reference image as draw.io / generate editable drawio" → `drawio-reconstruction`
 - "review the paper before I submit / final pass" → `pre-submission-reviewer`
 - "I am writing a benchmark paper / I am doing an evaluation paper" → `benchmark-paper-template`
 - "how do I use AI to assist my research" → `vibe-research-workflow`
@@ -172,6 +187,7 @@ Each skill's `references/` directory carries on-demand depth. For example, `idea
 | intro-drafter | 3.2 |
 | benchmark-paper-template | 3.4 / 6.3 |
 | figure-designer | 4.1 / 4.2 / 4.3 / 4.4 |
+| drawio-reconstruction | 4.4 / VCG-Bench |
 | pre-submission-reviewer | 3.5 / 1.1 |
 | vibe-research-workflow | 5.1 / 5.2 |
 
