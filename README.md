@@ -16,12 +16,11 @@
 
 ## 📰 News
 
-- **[2026-07-04]** 🚀 **v2.1 预览**（[`feat/doubao-backport`](https://github.com/HKUSTDial/Supervisor-Skills/tree/feat/doubao-backport) 分支）：新增三个技能——`paper-writer`（证据门控的论文正文写作）、`paper-polish`（忠于原意的语言润色）、`deep-research`（综述级文献调研）；`intro-drafter` 升级为正文输出；评估与评审技能引入学科范式路由；仓库结构扁平化。详见 [CHANGELOG](CHANGELOG.md)。
-- **[2026-07-03]** 🧩 新增 `drawio-reconstruction` 技能：参考图一键重建为可编辑 Draw.io（改编自 [sxy1499894281 的开源实现](https://github.com/sxy1499894281/drawio-reconstruction-skill)，MIT）。
-- **[2026-06-20]** ⭐ GitHub Star 突破 **3,000**。
+- **[2026-07-04]** 🚀 **v2.1**：新增 `paper-writer`（证据门控的论文正文写作）、`paper-polish`（忠于原意的语言润色）、`deep-research`（综述级文献调研）三个技能；`intro-drafter` 升级为正文输出；评估与评审技能引入学科范式路由。详见 [CHANGELOG](CHANGELOG.md)。
+- **[2026-07-03]** 🎤 受邀在 **2026 中国智能体大会** Skill 会场进行分享。
+- **[2026-07-03]** 🧩 新增 `drawio-reconstruction` 技能：参考图一键重建为可编辑 Draw.io。
 - **[2026-05-21]** ⭐ GitHub Star 突破 **1,000**（发布第 32 天），微信社群同期突破 200 人。
-- **[2026-04-20]** 📖 **v2.0**：handbook 课程与上游 [PhD.Skills](https://github.com/HKUSTDial/PhD.Skills) 全量对齐——中文课程逐字保留，英文镜像重译。
-- **[2026-04-19]** 🎉 **v1.0** 首次发布：七个锚点技能，覆盖从 Idea 评估到投稿审查的论文全生命周期。
+- **[2026-04-19]** 🎉 项目发布：七个锚点技能覆盖论文全生命周期，配套 handbook 系统课程。
 
 ## 为什么做这个项目？
 

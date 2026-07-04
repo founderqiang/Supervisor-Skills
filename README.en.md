@@ -18,12 +18,11 @@ English · [中文](README.md)
 
 ## 📰 News
 
-- **[2026-07-04]** 🚀 **v2.1 preview** (branch [`feat/doubao-backport`](https://github.com/HKUSTDial/Supervisor-Skills/tree/feat/doubao-backport)): three new skills, `paper-writer` (evidence-gated paper drafting), `paper-polish` (meaning-preserving polishing), and `deep-research` (survey-grade literature investigation); `intro-drafter` now outputs prose; paradigm-aware routing lands in the evaluation and review skills; repository layout flattened. See the [CHANGELOG](CHANGELOG.md).
-- **[2026-07-03]** 🧩 New skill `drawio-reconstruction`: rebuild reference figures into editable Draw.io (adapted from [sxy1499894281's open-source implementation](https://github.com/sxy1499894281/drawio-reconstruction-skill), MIT).
-- **[2026-06-20]** ⭐ Crossed **3,000** GitHub stars.
+- **[2026-07-04]** 🚀 **v2.1**: three new skills, `paper-writer` (evidence-gated paper drafting), `paper-polish` (meaning-preserving polishing), and `deep-research` (survey-grade literature investigation); `intro-drafter` now outputs prose; paradigm-aware routing lands in the evaluation and review skills. See the [CHANGELOG](CHANGELOG.md).
+- **[2026-07-03]** 🎤 Invited talk at the Skill session of the **2026 China Agent Conference**.
+- **[2026-07-03]** 🧩 New skill `drawio-reconstruction`: rebuild reference figures into editable Draw.io.
 - **[2026-05-21]** ⭐ Crossed **1,000** GitHub stars, 32 days after release; the WeChat community passed 200 members in the same period.
-- **[2026-04-20]** 📖 **v2.0**: the handbook curriculum fully re-aligned with upstream [PhD.Skills](https://github.com/HKUSTDial/PhD.Skills); Chinese chapters preserved verbatim, English mirror retranslated.
-- **[2026-04-19]** 🎉 **v1.0** initial release: seven anchor skills covering the paper lifecycle from idea vetting to pre-submission review.
+- **[2026-04-19]** 🎉 Project released: seven anchor skills covering the paper lifecycle, together with the systematic handbook curriculum.
 
 ## Why this project?
 
