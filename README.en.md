@@ -18,11 +18,13 @@ English · [中文](README.md)
 
 ## 📰 News
 
-- **[2026-07-04]** 🚀 **v2.1**: three new skills, `paper-writer` (evidence-gated paper drafting), `paper-polish` (meaning-preserving polishing), and `deep-research` (survey-grade literature investigation); `intro-drafter` now outputs prose; paradigm-aware routing lands in the evaluation and review skills. See the [CHANGELOG](CHANGELOG.md).
-- **[2026-07-03]** 🎤 Invited talk at the Skill session of the **2026 China Agent Conference**.
-- **[2026-07-03]** 🧩 New skill `drawio-reconstruction`: rebuild reference figures into editable Draw.io.
-- **[2026-05-21]** ⭐ Crossed **1,000** GitHub stars, 32 days after release; the WeChat community passed 200 members in the same period.
-- **[2026-04-19]** 🎉 Project released: seven anchor skills covering the paper lifecycle, together with the systematic handbook curriculum.
+> - **[2026-07-04]** 🚀 **v2.1**: three new skills, `paper-writer` (evidence-gated paper drafting), `paper-polish` (meaning-preserving polishing), and `deep-research` (survey-grade literature investigation); `intro-drafter` now outputs prose; paradigm-aware routing lands in the evaluation and review skills. See the [CHANGELOG](CHANGELOG.md).
+> - **[2026-07-03]** 🎤 Invited talk at the Skill session of the **2026 China Agent Conference**.
+> - **[2026-07-03]** 🧩 New skill `drawio-reconstruction`: rebuild reference figures into editable Draw.io.
+> - **[2026-05-21]** ⭐ Crossed **1,000** GitHub stars, 32 days after release.
+> - **[2026-04-19]** 🎉 Project released: seven anchor skills covering the paper lifecycle, together with the systematic handbook curriculum.
+
+---
 
 ## Why this project?
 
