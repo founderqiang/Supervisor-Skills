@@ -20,7 +20,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-SKILL_ROOT = Path("plugins/phd-research/skills")
+SKILL_ROOT = Path("skills")
 
 # canonical (relative to SKILL_ROOT) -> list of copies (same)
 SHARED = {

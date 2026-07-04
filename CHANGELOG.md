@@ -40,6 +40,13 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 
+- Repository layout flattened: skills moved from
+  `plugins/phd-research/skills/` to top-level `skills/` (the plugin
+  nesting was vestigial; no plugin manifest ever existed), the English
+  handbook mirror moved from `docs/en/handbook/` to top-level
+  `handbook-en/`, and images moved from `assets/images/` to `assets/`.
+  All links, the linter, and the sync checker updated; the
+  handbook-resync image-rewrite convention now targets `../../assets/`.
 - `intro-drafter` now outputs six paragraphs of Introduction prose by
   default (the flowchart becomes an internal scaffold; the classic
   outline remains available on explicit request), never fabricates

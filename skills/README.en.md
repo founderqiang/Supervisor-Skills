@@ -10,8 +10,8 @@ Supervisor-Skills is layered by audience:
 
 | Entry point | Audience | Purpose |
 |---|---|---|
-| Top-level [`README.en.md`](../../../README.en.md) | First-time visitors | Why the project exists, tutorial structure, how to install |
-| [`handbook/`](../../../handbook/) (Chinese, canonical) / [`docs/en/handbook/`](../../../docs/en/handbook/) (English mirror) | Readers who want the methodology | Six chapters of research and writing handbook (the theoretical spine) |
+| Top-level [`README.en.md`](../README.en.md) | First-time visitors | Why the project exists, tutorial structure, how to install |
+| [`handbook/`](../handbook/) (Chinese, canonical) / [`handbook-en/`](../handbook-en/) (English mirror) | Readers who want the methodology | Six chapters of research and writing handbook (the theoretical spine) |
 | **This file** | Readers who want the skills directly | **What each of the 11 skills is, when to use it, how it chains with the others** |
 | `SKILL.md` (inside each skill directory) | The plugin / LLMs | Executable spec: integrity gates, output formats, mode options — machine-readable, not optimised for human browsing |
 
@@ -73,7 +73,7 @@ Each card translates the SKILL.md spec into plain-reader language, adds the matc
   - Rough-filter a list of ideas, keep the top three, cut the rest
 - **Four layers**: fatal-flaws audit (early short-circuit) → idea lifecycle and student capability matching → five-dimension scoring (Higher, Faster, Stronger, Cheaper, Broader) → paradigm-shift probe plus feasibility. The order matters — a seven-out-of-ten "Higher" score means nothing if a CRITICAL fatal flaw is sitting underneath it.
 - **Output**: evidence-grounded scores on every axis, severity tagging (CRITICAL / MAJOR / MINOR), and a verdict of "Reject and Pivot" or "Proceed with Guardrails".
-- **Matching handbook chapters**: [2.1 Idea lifecycle](../../../docs/en/handbook/02_Idea_Generation/2.1_idea-lifecycle-and-capability-matching.md) · [2.2 Higher-Faster-Stronger](../../../docs/en/handbook/02_Idea_Generation/2.2_higher-faster-stronger.md) · [2.3 Disruptive innovation](../../../docs/en/handbook/02_Idea_Generation/2.3_disruptive-innovation.md)
+- **Matching handbook chapters**: [2.1 Idea lifecycle](../handbook-en/02_Idea_Generation/2.1_idea-lifecycle-and-capability-matching.md) · [2.2 Higher-Faster-Stronger](../handbook-en/02_Idea_Generation/2.2_higher-faster-stronger.md) · [2.3 Disruptive innovation](../handbook-en/02_Idea_Generation/2.3_disruptive-innovation.md)
 - **Downstream**: once the idea passes, hand off to **tech-paper-template** to lock the skeleton. When the paradigm probe flags disruptive potential, read handbook 2.3 first.
 
 ### deep-research — survey-grade literature investigation
@@ -96,7 +96,7 @@ Each card translates the SKILL.md spec into plain-reader language, adds the matc
   - Halfway through drafting you notice the method does not actually respond to the motivation — come back to the table and reshuffle
 - **Key discipline**: choose the paper's **positioning type** once (technical / position paper vs new-problem / new-setting paper); enforce the challenge-to-module one-to-one mapping with at most three entries; every contribution bullet must cite the section that delivers it.
 - **Output**: a completed thinking-template table + self-consistency audit (the "challenge—module—contribution" three-way interlock) + structured input ready for intro-drafter.
-- **Matching handbook chapters**: [3.1 Essentials of a research paper](../../../docs/en/handbook/03_Paper_Writing/3.1_the-essentials-of-a-research-paper.md) · [3.3 Technical paper template](../../../docs/en/handbook/03_Paper_Writing/3.3_technical-paper-template.md)
+- **Matching handbook chapters**: [3.1 Essentials of a research paper](../handbook-en/03_Paper_Writing/3.1_the-essentials-of-a-research-paper.md) · [3.3 Technical paper template](../handbook-en/03_Paper_Writing/3.3_technical-paper-template.md)
 - **Up- and downstream**: upstream is **idea-evaluator**; downstream is **intro-drafter** (turn the skeleton into a six-paragraph outline) and **figure-designer** (fix the Solution Overview figure around the module graph).
 
 ### intro-drafter — six paragraphs of Introduction prose
@@ -108,7 +108,7 @@ Each card translates the SKILL.md spec into plain-reader language, adds the matc
   - You only want the skeleton: say "just the outline" and the classic outline mode returns
 - **Key discipline**: search before writing (a full Introduction typically weaves 15-25 verified references); running examples are never fabricated (absent a real case from the user, the background paragraph stays abstract and the closing note asks for one); the shared evidence discipline with paper-writer applies (zero placeholder tags, no invented specifics).
 - **Output**: six paragraphs of Introduction prose + a References list matched bidirectionally + at most three lines of closing notes.
-- **Matching handbook chapter**: [3.2 Introduction writing flowchart](../../../docs/en/handbook/03_Paper_Writing/3.2_introduction-writing-flowchart.md)
+- **Matching handbook chapter**: [3.2 Introduction writing flowchart](../handbook-en/03_Paper_Writing/3.2_introduction-writing-flowchart.md)
 - **Up- and downstream**: upstream is **tech-paper-template**; downstream is **figure-designer** (the Running Example from paragraph 1 becomes the Motivated Example figure) and **paper-writer** (every other section).
 
 ### paper-writer — evidence-gated paper drafting
@@ -120,7 +120,7 @@ Each card translates the SKILL.md spec into plain-reader language, adds the matc
   - Non-STEM sections (humanities, social science, economics, law), planned paragraph by paragraph on a CER skeleton
 - **Key discipline**: factual claims have exactly three legitimate origins (user materials, this session's verified retrieval, or field common knowledge with no numbers, names, or comparisons), never model memory; zero placeholder tags, the only resolution path is search, rewrite, or delete; full papers, final mode, or three-plus citations trigger the **independent citation verification** (a fresh-context sub-agent checks every entry, with honest degradation and disclosure when the environment lacks sub-agents).
 - **Output**: clean section or manuscript prose + a bidirectionally matched References list + at most three lines of notes; full-paper runs keep an evidence map and chapter blueprint as separate working files.
-- **Matching handbook chapters**: [3.1 Essentials](../../../docs/en/handbook/03_Paper_Writing/3.1_the-essentials-of-a-research-paper.md) · [3.3 Technical paper template](../../../docs/en/handbook/03_Paper_Writing/3.3_technical-paper-template.md) · [3.5 Writing details](../../../docs/en/handbook/03_Paper_Writing/3.5_writing-details-and-checklist.md)
+- **Matching handbook chapters**: [3.1 Essentials](../handbook-en/03_Paper_Writing/3.1_the-essentials-of-a-research-paper.md) · [3.3 Technical paper template](../handbook-en/03_Paper_Writing/3.3_technical-paper-template.md) · [3.5 Writing details](../handbook-en/03_Paper_Writing/3.5_writing-details-and-checklist.md)
 - **Up- and downstream**: upstream is **tech-paper-template** (skeleton) and **intro-drafter** (Introduction prose); downstream is **paper-polish** (language) and **pre-submission-reviewer** (final audit).
 
 ### benchmark-paper-template — the all-in-one orchestrator for benchmark papers
@@ -133,7 +133,7 @@ Each card translates the SKILL.md spec into plain-reader language, adds the matc
   - Working through the benchmark-paper checklist before submission
 - **Six stages**: Gap Analysis → Design → Construction Pipeline → Experiments → Paper Structure → Checklist. The skill **first detects the current stage**, then routes to the relevant thinking support.
 - **Output**: per-stage deliverables + a six-part Introduction logic chain + a Section 2-7 skeleton + a pre-submission checklist.
-- **Matching handbook chapters**: [3.4 Benchmark and evaluation paper template](../../../docs/en/handbook/03_Paper_Writing/3.4_benchmark-paper-template.md) · [6.3 LEAD writing analysis](../../../docs/en/handbook/06_Case_Studies/6.3_vldb2026-lead-analysis.md)
+- **Matching handbook chapters**: [3.4 Benchmark and evaluation paper template](../handbook-en/03_Paper_Writing/3.4_benchmark-paper-template.md) · [6.3 LEAD writing analysis](../handbook-en/06_Case_Studies/6.3_vldb2026-lead-analysis.md)
 - **Cross-link**: figure-designer (the two core figures) · pre-submission-reviewer (final audit).
 
 ### figure-designer — the design advisor for the three load-bearing figures
@@ -146,7 +146,7 @@ Each card translates the SKILL.md spec into plain-reader language, adds the matc
   - Torn between PowerPoint, TikZ, and Inkscape
 - **Key principles**: one figure says one thing; axis / legend / palette at top-venue aesthetic standards; the Experimental Results figure must speak directly back to the Introduction's motivation.
 - **Output**: per-figure design notes, common anti-patterns, tool picks, and reusable layout templates.
-- **Matching handbook chapters**: [4.1 Motivated example figure](../../../docs/en/handbook/04_Scientific_Plotting/4.1_motivated-example-figure.md) · [4.2 Solution overview figure](../../../docs/en/handbook/04_Scientific_Plotting/4.2_solution-overview-figure.md) · [4.3 Experimental results figure](../../../docs/en/handbook/04_Scientific_Plotting/4.3_experimental-results-figure.md) · [4.4 Plotting checklist](../../../docs/en/handbook/04_Scientific_Plotting/4.4_plotting-checklist-and-tools.md)
+- **Matching handbook chapters**: [4.1 Motivated example figure](../handbook-en/04_Scientific_Plotting/4.1_motivated-example-figure.md) · [4.2 Solution overview figure](../handbook-en/04_Scientific_Plotting/4.2_solution-overview-figure.md) · [4.3 Experimental results figure](../handbook-en/04_Scientific_Plotting/4.3_experimental-results-figure.md) · [4.4 Plotting checklist](../handbook-en/04_Scientific_Plotting/4.4_plotting-checklist-and-tools.md)
 - **Up- and downstream**: upstream is **intro-drafter** (running example locks Figure 1) and **tech-paper-template** (module graph locks the Solution Overview figure); downstream is **pre-submission-reviewer** (figure quality is part of the final audit).
 
 ### drawio-reconstruction — rebuild reference figures as editable Draw.io
@@ -170,7 +170,7 @@ Each card translates the SKILL.md spec into plain-reader language, adds the matc
   - "Is this claim too strong?"
 - **Key discipline**: no edit that might change scientific meaning is ever made silently; such edits ship as a before/after list for the author to confirm; nothing absent from the original is added (no data, equations, citations, or mechanisms); conservative by default; when working on files, the edits land in the files and the version diff is the change record.
 - **Output**: clean polished prose + three to five change notes, meaning-risk items listed side by side.
-- **Matching handbook chapter**: [3.5 Writing details and checklist](../../../docs/en/handbook/03_Paper_Writing/3.5_writing-details-and-checklist.md)
+- **Matching handbook chapter**: [3.5 Writing details and checklist](../handbook-en/03_Paper_Writing/3.5_writing-details-and-checklist.md)
 - **Up- and downstream**: upstream is **paper-writer** / **intro-drafter** (drafts to polish); problems beyond language (broken logic, a doubtful core claim) route to **paper-writer** for redrafting or **pre-submission-reviewer** for a verdict.
 
 ### pre-submission-reviewer — the top-venue reviewer's final audit
@@ -182,7 +182,7 @@ Each card translates the SKILL.md spec into plain-reader language, adds the matc
   - Rebuttal is drafted; you want another sweep against the "things reviewers will flag" catalogue
 - **Methodology**: severity tagging (CRITICAL / MAJOR / MINOR) + reviewer-style writing checklist + high-frequency English pitfalls + common LaTeX formatting mistakes.
 - **Output**: a severity-ranked defect list, each item paired with an actionable fix, with a clear **subset that is realistically fixable in 72 hours** called out.
-- **Matching handbook chapters**: [3.5 Writing details and checklist](../../../docs/en/handbook/03_Paper_Writing/3.5_writing-details-and-checklist.md) · [1.1 How to evaluate paper quality](../../../docs/en/handbook/01_Preliminary/1.1_how-to-evaluate-paper-quality.md)
+- **Matching handbook chapters**: [3.5 Writing details and checklist](../handbook-en/03_Paper_Writing/3.5_writing-details-and-checklist.md) · [1.1 How to evaluate paper quality](../handbook-en/01_Preliminary/1.1_how-to-evaluate-paper-quality.md)
 - **Upstream**: the endpoint of the technical-paper track; also the endpoint of the benchmark-paper track.
 
 ### vibe-research-workflow — the always-on rules for AI-assisted research
@@ -195,14 +195,14 @@ Each card translates the SKILL.md spec into plain-reader language, adds the matc
   - The output feels like "the AI is winging it" — usually the behavioural rules are not aligned
 - **Core principle**: **keep academic judgment in the human's hands, delegate mechanical labour to AI**; every AI output must come with checkable evidence; tool picks are per task type with a concrete shortlist.
 - **Output**: a recommended tool chain for the current scenario, a human-AI division-of-labour sketch, and a common-failure-mode catalogue.
-- **Matching handbook chapters**: [5.1 Vibe Research and Vibe Coding primer](../../../docs/en/handbook/05_Vibe_Research/5.1_vibe-research-and-vibe-coding.md) · [5.2 Practitioner notes](../../../docs/en/handbook/05_Vibe_Research/5.2_liboyan-practical-notes.md)
+- **Matching handbook chapters**: [5.1 Vibe Research and Vibe Coding primer](../handbook-en/05_Vibe_Research/5.1_vibe-research-and-vibe-coding.md) · [5.2 Practitioner notes](../handbook-en/05_Vibe_Research/5.2_liboyan-practical-notes.md)
 - **How it fits**: **orthogonal** to the other ten skills. It is not step N; it is a rulebook you pull up at any step. Drafting requests are legitimate: they route to paper-writer / intro-drafter, whose evidence discipline forbids fabricated substance; disclosure and per-passage verification duties stay with the author.
 
 ## How to actually use these skills
 
 ### With the Claude plugin installed (recommended)
 
-Follow the [Quick Start](../../../README.en.md#quick-start) in the top-level README. Once installed, natural language triggers are enough, no commands to memorise. The following phrasings route to the matching skill:
+Follow the [Quick Start](../README.en.md#quick-start) in the top-level README. Once installed, natural language triggers are enough, no commands to memorise. The following phrasings route to the matching skill:
 
 - "survey this direction for me / literature review" → `deep-research`
 - "help me evaluate this idea" → `idea-evaluator`
@@ -244,7 +244,7 @@ Each skill's `references/` directory carries on-demand depth. For example, `idea
 
 ## Contributing and feedback
 
-New skills, SKILL.md revisions, reference additions, or top-venue papers you wrote with these skills are all welcome. Please read the top-level [CONTRIBUTING.md](../../../CONTRIBUTING.md) first; the hard rules for new skills live there.
+New skills, SKILL.md revisions, reference additions, or top-venue papers you wrote with these skills are all welcome. Please read the top-level [CONTRIBUTING.md](../CONTRIBUTING.md) first; the hard rules for new skills live there.
 
 For questions, feedback, or to bring Supervisor-Skills to your own lab, please email Yuyu Luo at yuyuluo [AT] hkust-gz.edu.cn.
 
