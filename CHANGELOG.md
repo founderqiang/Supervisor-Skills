@@ -12,6 +12,49 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   `sxy1499894281/drawio-reconstruction-skill`, for reconstructing
   reference images into editable Draw.io files with PNG previews and
   visual audits.
+- Three skills ported back from our Doubao adaptation practice, where
+  they were built and field-tested (all original content):
+  - `paper-writer`: evidence-gated drafting of any section or a full
+    manuscript. Factual claims trace to the user's materials, verified
+    retrieval, or field common knowledge; model memory is never a
+    source; delivered prose carries zero placeholder tags; citations
+    pass an independent verification ladder (fresh-context sub-agent,
+    same-context API grounding, or closed book with disclosure).
+  - `paper-polish`: meaning-preserving language polish with a hard
+    faithfulness rule (meaning-risk edits are flagged, never silent),
+    AI-tone removal, claim calibration, and Chinese-to-English
+    rewriting.
+  - `deep-research`: survey-grade literature investigation with frozen
+    research questions, multi-perspective search, per-citation
+    verification (grey zone means unused), MECE synthesis with
+    in-sentence cross-comparison, and six internal quality gates.
+- `idea-evaluator`: substitute evaluation frameworks for non-STEM
+  paradigms (`references/domain-evaluation-frameworks.md`), scoring
+  discipline (data-or-mechanism grounds, mechanism-based high scores
+  with a named validation experiment), attribution discipline, a
+  retrieval-grounded novelty check, and a data-refuted-mechanism
+  short-circuit rule.
+- `scripts/check_shared_sync.py`: shared reference files are duplicated
+  per consuming skill with a canonical header; this checker enforces
+  parity.
+
+### Changed
+
+- `intro-drafter` now outputs six paragraphs of Introduction prose by
+  default (the flowchart becomes an internal scaffold; the classic
+  outline remains available on explicit request), never fabricates
+  running examples, and inherits the shared evidence discipline.
+- `pre-submission-reviewer` gains a paradigm-and-venue-fit step
+  (review emphasis switches across STEM, humanities, empirical social
+  science, finance/economics, and law), retrieval-grounded novelty and
+  citation-completeness checks, an attribution-isolation check, and a
+  severity-honesty rule; the integrity gate runs silently.
+- `vibe-research-workflow` stance precisified: fabrication is
+  forbidden, drafting is not. Drafting requests route to the drafting
+  skills under the shared evidence discipline, with disclosure and
+  author-verification duties restated.
+- Delivery philosophy across evaluator skills: integrity gates run
+  silently and surface as findings instead of printed gate reports.
 
 ### Fixed
 

@@ -108,12 +108,15 @@ Supervisor-Skills/
 │       └── 6.3_VLDB_2026_LEAD写作剖析.md
 │
 ├── plugins/phd-research/skills/       # 🛠️ 提炼出的可执行 AI Skills
-│   ├── idea-evaluator/                # 构思阶段技能
+│   ├── idea-evaluator/                # 构思与调研阶段技能
+│   ├── deep-research/
 │   ├── vibe-research-workflow/
-│   ├── intro-drafter/                 # 写作阶段技能
-│   ├── tech-paper-template/
+│   ├── tech-paper-template/           # 写作阶段技能
+│   ├── intro-drafter/
+│   ├── paper-writer/
 │   ├── benchmark-paper-template/
-│   ├── pre-submission-reviewer/       # 自查与润色技能
+│   ├── paper-polish/                  # 自查与润色技能
+│   ├── pre-submission-reviewer/
 │   ├── figure-designer/
 │   └── drawio-reconstruction/         # Draw.io 重建执行技能
 │
@@ -143,7 +146,10 @@ Supervisor-Skills/
 |---|---|---|
 | **Idea Evaluator** | 输入你的 Idea，AI 将根据"更高更快更强"5维框架和能力匹配表进行客观评估与打分 | [使用技能](plugins/phd-research/skills/idea-evaluator/SKILL.md) |
 | **Vibe Research Guide** | AI 辅助科研全流程指导：Vibe Coding / Vibe Figure / Vibe Writing | [使用技能](plugins/phd-research/skills/vibe-research-workflow/SKILL.md) |
-| **Introduction Drafter** | 基于 Introduction 的 Flowchart 思考模型，输入研究动机，自动生成高质量的 Intro 大纲 | [使用技能](plugins/phd-research/skills/intro-drafter/SKILL.md) |
+| **Introduction Drafter** | 基于 Introduction 的 Flowchart 思考模型，输入研究动机，直接产出六段式 Intro 正文（引用经真实检索核验；也可只要大纲） | [使用技能](plugins/phd-research/skills/intro-drafter/SKILL.md) |
+| **Paper Writer** | 证据门控的论文正文写作：从单段到整篇，每个事实性声明可溯源到你的材料或核验过的文献，引用经独立核查，绝不编造 | [使用技能](plugins/phd-research/skills/paper-writer/SKILL.md) |
+| **Paper Polish** | 忠于原意的语言润色：改语法、去 AI 腔、把握措辞分寸、中文稿改写为投稿级英文，可能动到含义的改动逐条标出请你确认 | [使用技能](plugins/phd-research/skills/paper-polish/SKILL.md) |
+| **Deep Research** | 综述级文献深度调研：多视角检索、逐条引用核验、MECE 分类综合与交叉对比，产出逐条回答研究问题的 survey 报告 | [使用技能](plugins/phd-research/skills/deep-research/SKILL.md) |
 | **Tech Paper Template** | 基于"技术类Full Paper思考模板"，辅助你一步步梳理论文的完整逻辑链 | [使用技能](plugins/phd-research/skills/tech-paper-template/SKILL.md) |
 | **Benchmark Paper Template** | 专为 Benchmark/Evaluation 类论文设计，辅助梳理评估逻辑和实验设计 | [使用技能](plugins/phd-research/skills/benchmark-paper-template/SKILL.md) |
 | **Pre-Submission Reviewer** | 顶会审稿人视角！基于写作 Checklist 和英语语法易错点，对草稿进行全面审查 | [使用技能](plugins/phd-research/skills/pre-submission-reviewer/SKILL.md) |

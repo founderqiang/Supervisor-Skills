@@ -116,10 +116,13 @@ Supervisor-Skills/
 │
 ├── plugins/phd-research/skills/       # 🛠️ Executable AI Skills
 │   ├── idea-evaluator/
+│   ├── deep-research/
 │   ├── vibe-research-workflow/
-│   ├── intro-drafter/
 │   ├── tech-paper-template/
+│   ├── intro-drafter/
+│   ├── paper-writer/
 │   ├── benchmark-paper-template/
+│   ├── paper-polish/
 │   ├── pre-submission-reviewer/
 │   ├── figure-designer/
 │   └── drawio-reconstruction/
@@ -152,7 +155,10 @@ This is the core of the repository. The theoretical experience above is distille
 |---|---|---|
 | **Idea Evaluator** | Feed in your idea, and the AI scores it on the "Higher / Faster / Stronger" five-dimension framework and the capability-matching table. | [Use skill](plugins/phd-research/skills/idea-evaluator/SKILL.md) |
 | **Vibe Research Guide** | AI-assisted research across the full lifecycle: Vibe Coding / Vibe Figure / Vibe Writing. | [Use skill](plugins/phd-research/skills/vibe-research-workflow/SKILL.md) |
-| **Introduction Drafter** | Based on the Introduction Flowchart thinking model, feed in your research motivation and receive a high-quality Intro outline. | [Use skill](plugins/phd-research/skills/intro-drafter/SKILL.md) |
+| **Introduction Drafter** | Based on the Introduction Flowchart thinking model, feed in your research motivation and receive six paragraphs of Introduction prose with retrieval-verified citations (outline mode on request). | [Use skill](plugins/phd-research/skills/intro-drafter/SKILL.md) |
+| **Paper Writer** | Evidence-gated paper drafting from a single paragraph to a full manuscript: every factual claim traces to your materials or verified literature, citations pass an independent check, nothing is fabricated. | [Use skill](plugins/phd-research/skills/paper-writer/SKILL.md) |
+| **Paper Polish** | Meaning-preserving language polishing: grammar, AI-tone removal, claim calibration, and Chinese-to-English rewriting at submission quality, with meaning-risk edits flagged for your confirmation. | [Use skill](plugins/phd-research/skills/paper-polish/SKILL.md) |
+| **Deep Research** | Survey-grade literature investigation: multi-perspective search, per-citation verification, MECE synthesis with cross-comparison, delivered as a survey report that answers explicit research questions. | [Use skill](plugins/phd-research/skills/deep-research/SKILL.md) |
 | **Tech Paper Template** | Based on the "Technical Full Paper thinking template", walks you through the full logical chain of your paper. | [Use skill](plugins/phd-research/skills/tech-paper-template/SKILL.md) |
 | **Benchmark Paper Template** | Designed for Benchmark/Evaluation papers, helping you structure evaluation logic and experimental design. | [Use skill](plugins/phd-research/skills/benchmark-paper-template/SKILL.md) |
 | **Pre-Submission Reviewer** | Reviewer's perspective at a top venue — runs a full review over your draft based on the writing checklist and common English grammar pitfalls. | [Use skill](plugins/phd-research/skills/pre-submission-reviewer/SKILL.md) |

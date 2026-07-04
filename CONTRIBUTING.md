@@ -4,7 +4,7 @@ This repository welcomes issues, pull requests, and discussions. Please read thi
 
 ## Scope
 
-The current skill set contains eight anchor skills under `plugins/phd-research/skills/`: `idea-evaluator`, `vibe-research-workflow`, `intro-drafter`, `tech-paper-template`, `benchmark-paper-template`, `figure-designer`, `drawio-reconstruction`, `pre-submission-reviewer`. Adding a new skill requires:
+The current skill set contains eleven anchor skills under `plugins/phd-research/skills/`: `idea-evaluator`, `deep-research`, `vibe-research-workflow`, `intro-drafter`, `paper-writer`, `tech-paper-template`, `benchmark-paper-template`, `paper-polish`, `figure-designer`, `drawio-reconstruction`, `pre-submission-reviewer`. Adding a new skill requires:
 
 1. Discussion via issue first; confirm the skill fills a real gap and is not covered by an existing skill.
 2. Clear attribution for any content not derived from `handbook/`.
@@ -26,12 +26,14 @@ Each skill directory at `plugins/phd-research/skills/<name>/` contains:
 - No Chinese characters in SKILL.md (the canonical Chinese curriculum lives at `handbook/`; English mirror at `docs/en/handbook/`).
 - All `See: references/X.md` pointers must resolve to existing files.
 - No nested references (`SKILL.md -> refs/a.md -> refs/b.md` is illegal).
+- Reference files shared across skills are duplicated per consuming skill (skills stay self-contained); each copy carries a header naming its canonical, and copies must stay byte-identical to the canonical below the header (`python scripts/check_shared_sync.py`).
 - Commits must not contain "Claude", "Co-Authored-By: Claude", or Anthropic attribution.
 
 ## Running the linter
 
 ```bash
 python scripts/lint_skills.py
+python scripts/check_shared_sync.py
 ```
 
 The linter exits non-zero on any violation and is invoked by `.github/workflows/lint.yml` on every PR.
