@@ -10,6 +10,21 @@
 
 English · [中文](README.md)
 
+<p align="center">
+  <a href="https://github.com/HKUSTDial/Supervisor-Skills/stargazers"><img src="https://img.shields.io/github/stars/HKUSTDial/Supervisor-Skills?style=flat-square&logo=github" alt="GitHub stars"></a>
+  <a href="https://github.com/HKUSTDial/Supervisor-Skills/network/members"><img src="https://img.shields.io/github/forks/HKUSTDial/Supervisor-Skills?style=flat-square&logo=github" alt="GitHub forks"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-lightgrey?style=flat-square" alt="License"></a>
+</p>
+
+## 📰 News
+
+- **[2026-07-04]** 🚀 **v2.1 preview** (branch [`feat/doubao-backport`](https://github.com/HKUSTDial/Supervisor-Skills/tree/feat/doubao-backport)): three new skills, `paper-writer` (evidence-gated paper drafting), `paper-polish` (meaning-preserving polishing), and `deep-research` (survey-grade literature investigation); `intro-drafter` now outputs prose; paradigm-aware routing lands in the evaluation and review skills; repository layout flattened. See the [CHANGELOG](CHANGELOG.md).
+- **[2026-07-03]** 🧩 New skill `drawio-reconstruction`: rebuild reference figures into editable Draw.io (adapted from [sxy1499894281's open-source implementation](https://github.com/sxy1499894281/drawio-reconstruction-skill), MIT).
+- **[2026-06-20]** ⭐ Crossed **3,000** GitHub stars.
+- **[2026-05-21]** ⭐ Crossed **1,000** GitHub stars, 32 days after release; the WeChat community passed 200 members in the same period.
+- **[2026-04-20]** 📖 **v2.0**: the handbook curriculum fully re-aligned with upstream [PhD.Skills](https://github.com/HKUSTDial/PhD.Skills); Chinese chapters preserved verbatim, English mirror retranslated.
+- **[2026-04-19]** 🎉 **v1.0** initial release: seven anchor skills covering the paper lifecycle from idea vetting to pre-submission review.
+
 ## Why this project?
 
 Hi, I'm [Yuyu Luo](https://luoyuyu.vip/), Assistant Professor at The Hong Kong University of Science and Technology (Guangzhou). From my own PhD journey to mentoring students, I keep seeing the same scene: talented graduate students, as they step into research, are trapped by very similar struggles:

@@ -8,6 +8,21 @@
 
 [English](README.en.md) · 中文
 
+<p align="center">
+  <a href="https://github.com/HKUSTDial/Supervisor-Skills/stargazers"><img src="https://img.shields.io/github/stars/HKUSTDial/Supervisor-Skills?style=flat-square&logo=github" alt="GitHub stars"></a>
+  <a href="https://github.com/HKUSTDial/Supervisor-Skills/network/members"><img src="https://img.shields.io/github/forks/HKUSTDial/Supervisor-Skills?style=flat-square&logo=github" alt="GitHub forks"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-lightgrey?style=flat-square" alt="License"></a>
+</p>
+
+## 📰 News
+
+- **[2026-07-04]** 🚀 **v2.1 预览**（[`feat/doubao-backport`](https://github.com/HKUSTDial/Supervisor-Skills/tree/feat/doubao-backport) 分支）：新增三个技能——`paper-writer`（证据门控的论文正文写作）、`paper-polish`（忠于原意的语言润色）、`deep-research`（综述级文献调研）；`intro-drafter` 升级为正文输出；评估与评审技能引入学科范式路由；仓库结构扁平化。详见 [CHANGELOG](CHANGELOG.md)。
+- **[2026-07-03]** 🧩 新增 `drawio-reconstruction` 技能：参考图一键重建为可编辑 Draw.io（改编自 [sxy1499894281 的开源实现](https://github.com/sxy1499894281/drawio-reconstruction-skill)，MIT）。
+- **[2026-06-20]** ⭐ GitHub Star 突破 **3,000**。
+- **[2026-05-21]** ⭐ GitHub Star 突破 **1,000**（发布第 32 天），微信社群同期突破 200 人。
+- **[2026-04-20]** 📖 **v2.0**：handbook 课程与上游 [PhD.Skills](https://github.com/HKUSTDial/PhD.Skills) 全量对齐——中文课程逐字保留，英文镜像重译。
+- **[2026-04-19]** 🎉 **v1.0** 首次发布：七个锚点技能，覆盖从 Idea 评估到投稿审查的论文全生命周期。
+
 ## 为什么做这个项目？
 
 大家好，我是[骆昱宇](https://luoyuyu.vip/)，香港科技大学（广州）的助理教授。从自己读博到指导学生，我反复看到一个场景：许多才华横溢的研究生，在踏入科研大门时，常常被相似的困境所困扰：
