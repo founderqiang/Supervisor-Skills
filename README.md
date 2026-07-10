@@ -16,7 +16,7 @@
 
 ## 📰 News
 
-> - **[2026-07-04]** 🚀 **v2.1**：新增 `paper-writer`（证据门控的论文正文写作）、`paper-polish`（忠于原意的语言润色）、`deep-research`（综述级文献调研）三个技能；`intro-drafter` 升级为正文输出；评估与评审技能引入学科范式路由。详见 [CHANGELOG](CHANGELOG.md)。
+> - **[2026-07-10]** 🚀 **v2.1**：新增 `paper-writer`（证据门控的论文正文写作）、`paper-polish`（忠于原意的语言润色）、`deep-research`（综述级文献调研）三个技能；`intro-drafter` 升级为正文输出；评估与评审技能引入学科范式路由。详见 [CHANGELOG](CHANGELOG.md)。
 > - **[2026-07-03]** 🎤 受邀在 **2026 中国智能体大会** Skill 会场进行分享。
 > - **[2026-07-03]** 🧩 新增 `drawio-reconstruction` 技能：参考图一键重建为可编辑 Draw.io。
 > - **[2026-05-21]** ⭐ GitHub Star 突破 **1,000**（发布第 32 天）。
