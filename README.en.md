@@ -208,16 +208,6 @@ Thanks to [Yin Wu](https://openreview.net/profile?id=%7EYin_WU2), [Boyan Li](htt
 - How to write a strong rebuttal, and what to do when reviewers ignore your response.
 - How to collaborate effectively on academic work.
 
-## Star History
-
-<a href="https://star-history.com/#HKUSTDial/Supervisor-Skills&Date">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=HKUSTDial/Supervisor-Skills&type=Date&theme=dark&_=20260429" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=HKUSTDial/Supervisor-Skills&type=Date&_=20260429" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=HKUSTDial/Supervisor-Skills&type=Date&_=20260429" />
-  </picture>
-</a>
-
 ## License
 
 This project is released under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). Non-commercial sharing and adaptation are welcome; please preserve attribution.
