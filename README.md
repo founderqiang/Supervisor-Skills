@@ -1,12 +1,28 @@
 <div align="center">
 
-<img src="assets/images/icon.png" alt="Supervisor-Skills" height="240" />
+<img src="assets/icon.png" alt="Supervisor-Skills" height="240" />
 
 </div>
 
 # Supervisor-Skills: 将博导十年科研经验，炼化为你的 AI 副导师。
 
 [English](README.en.md) · 中文
+
+<p align="center">
+  <a href="https://github.com/HKUSTDial/Supervisor-Skills/stargazers"><img src="https://img.shields.io/github/stars/HKUSTDial/Supervisor-Skills?style=flat-square&logo=github" alt="GitHub stars"></a>
+  <a href="https://github.com/HKUSTDial/Supervisor-Skills/network/members"><img src="https://img.shields.io/github/forks/HKUSTDial/Supervisor-Skills?style=flat-square&logo=github" alt="GitHub forks"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-lightgrey?style=flat-square" alt="License"></a>
+</p>
+
+## 📰 News
+
+> - **[2026-07-10]** 🚀 **v2.1**：新增 `paper-writer`（证据门控的论文正文写作）、`paper-polish`（忠于原意的语言润色）、`deep-research`（综述级文献调研）三个技能；`intro-drafter` 升级为正文输出；评估与评审技能引入学科范式路由。详见 [CHANGELOG](CHANGELOG.md)。
+> - **[2026-07-03]** 🎤 受邀在 **2026 中国智能体大会** Skill 会场进行分享。
+> - **[2026-07-03]** 🧩 新增 `drawio-reconstruction` 技能：参考图一键重建为可编辑 Draw.io。
+> - **[2026-05-21]** ⭐ GitHub Star 突破 **1,000**（发布第 32 天）。
+> - **[2026-04-19]** 🎉 项目发布：七个锚点技能覆盖论文全生命周期，配套 handbook 系统课程。
+
+---
 
 ## 为什么做这个项目？
 
@@ -50,13 +66,13 @@
   </tr>
   <tr>
     <td align="center" valign="middle" height="360">
-      <img src="assets/images/wechat-admin.JPG" height="300" />
+      <img src="assets/wechat-admin.JPG" height="300" />
     </td>
     <td align="center" valign="middle" height="360">
-      <img src="assets/images/wechat-official-account.jpg" height="280" />
+      <img src="assets/wechat-official-account.jpg" height="280" />
     </td>
     <td align="center" valign="middle" height="360">
-      <img src="assets/images/wechat-xiebro-research.jpg" height="280" />
+      <img src="assets/wechat-xiebro-research.jpg" height="280" />
     </td>
   </tr>
   <tr>
@@ -107,17 +123,20 @@ Supervisor-Skills/
 │       ├── 6.2_ICLR_2025_AFlow写作剖析.md
 │       └── 6.3_VLDB_2026_LEAD写作剖析.md
 │
-├── plugins/phd-research/skills/       # 🛠️ 提炼出的可执行 AI Skills
-│   ├── idea-evaluator/                # 构思阶段技能
+├── skills/                            # 🛠️ 提炼出的可执行 AI Skills
+│   ├── idea-evaluator/                # 构思与调研阶段技能
+│   ├── deep-research/
 │   ├── vibe-research-workflow/
-│   ├── intro-drafter/                 # 写作阶段技能
-│   ├── tech-paper-template/
+│   ├── tech-paper-template/           # 写作阶段技能
+│   ├── intro-drafter/
+│   ├── paper-writer/
 │   ├── benchmark-paper-template/
-│   ├── pre-submission-reviewer/       # 自查与润色技能
+│   ├── paper-polish/                  # 自查与润色技能
+│   ├── pre-submission-reviewer/
 │   ├── figure-designer/
 │   └── drawio-reconstruction/         # Draw.io 重建执行技能
 │
-└── assets/images/                     # 图片资源
+└── assets/                            # 图片资源
 ```
 
 ### 📖 Handbook：科研与写作系统指南
@@ -141,14 +160,17 @@ Supervisor-Skills/
 
 | 技能名称 | 功能描述 | 链接 |
 |---|---|---|
-| **Idea Evaluator** | 输入你的 Idea，AI 将根据"更高更快更强"5维框架和能力匹配表进行客观评估与打分 | [使用技能](plugins/phd-research/skills/idea-evaluator/SKILL.md) |
-| **Vibe Research Guide** | AI 辅助科研全流程指导：Vibe Coding / Vibe Figure / Vibe Writing | [使用技能](plugins/phd-research/skills/vibe-research-workflow/SKILL.md) |
-| **Introduction Drafter** | 基于 Introduction 的 Flowchart 思考模型，输入研究动机，自动生成高质量的 Intro 大纲 | [使用技能](plugins/phd-research/skills/intro-drafter/SKILL.md) |
-| **Tech Paper Template** | 基于"技术类Full Paper思考模板"，辅助你一步步梳理论文的完整逻辑链 | [使用技能](plugins/phd-research/skills/tech-paper-template/SKILL.md) |
-| **Benchmark Paper Template** | 专为 Benchmark/Evaluation 类论文设计，辅助梳理评估逻辑和实验设计 | [使用技能](plugins/phd-research/skills/benchmark-paper-template/SKILL.md) |
-| **Pre-Submission Reviewer** | 顶会审稿人视角！基于写作 Checklist 和英语语法易错点，对草稿进行全面审查 | [使用技能](plugins/phd-research/skills/pre-submission-reviewer/SKILL.md) |
-| **Figure Design Advisor** | 告诉 AI 你想表达什么，它会根据动机图/总览图/实验图的设计范式给出专业作图建议 | [使用技能](plugins/phd-research/skills/figure-designer/SKILL.md) |
-| **Draw.io Reconstruction** | 将参考图、论文图、架构图、幻灯片图或 UI 截图重建为可编辑 `.drawio` 文件，并导出 PNG 预览与视觉审计 | [使用技能](plugins/phd-research/skills/drawio-reconstruction/SKILL.md) |
+| **Idea Evaluator** | 输入你的 Idea，AI 将根据"更高更快更强"5维框架和能力匹配表进行客观评估与打分 | [使用技能](skills/idea-evaluator/SKILL.md) |
+| **Vibe Research Guide** | AI 辅助科研全流程指导：Vibe Coding / Vibe Figure / Vibe Writing | [使用技能](skills/vibe-research-workflow/SKILL.md) |
+| **Introduction Drafter** | 基于 Introduction 的 Flowchart 思考模型，输入研究动机，直接产出六段式 Intro 正文（引用经真实检索核验；也可只要大纲） | [使用技能](skills/intro-drafter/SKILL.md) |
+| **Paper Writer** | 证据门控的论文正文写作：从单段到整篇，每个事实性声明可溯源到你的材料或核验过的文献，引用经独立核查，绝不编造 | [使用技能](skills/paper-writer/SKILL.md) |
+| **Paper Polish** | 忠于原意的语言润色：改语法、去 AI 腔、把握措辞分寸、中文稿改写为投稿级英文，可能动到含义的改动逐条标出请你确认 | [使用技能](skills/paper-polish/SKILL.md) |
+| **Deep Research** | 综述级文献深度调研：多视角检索、逐条引用核验、MECE 分类综合与交叉对比，产出逐条回答研究问题的 survey 报告 | [使用技能](skills/deep-research/SKILL.md) |
+| **Tech Paper Template** | 基于"技术类Full Paper思考模板"，辅助你一步步梳理论文的完整逻辑链 | [使用技能](skills/tech-paper-template/SKILL.md) |
+| **Benchmark Paper Template** | 专为 Benchmark/Evaluation 类论文设计，辅助梳理评估逻辑和实验设计 | [使用技能](skills/benchmark-paper-template/SKILL.md) |
+| **Pre-Submission Reviewer** | 顶会审稿人视角！基于写作 Checklist 和英语语法易错点，对草稿进行全面审查 | [使用技能](skills/pre-submission-reviewer/SKILL.md) |
+| **Figure Design Advisor** | 告诉 AI 你想表达什么，它会根据动机图/总览图/实验图的设计范式给出专业作图建议 | [使用技能](skills/figure-designer/SKILL.md) |
+| **Draw.io Reconstruction** | 将参考图、论文图、架构图、幻灯片图或 UI 截图重建为可编辑 `.drawio` 文件，并导出 PNG 预览与视觉审计 | [使用技能](skills/drawio-reconstruction/SKILL.md) |
 
 ## 快速开始 (Quick Start)
 

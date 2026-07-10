@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/images/icon.png" alt="Supervisor-Skills" height="240" />
+<img src="assets/icon.png" alt="Supervisor-Skills" height="240" />
 
 </div>
 
@@ -9,6 +9,22 @@
 > From idea conception to paper submission, covering the full research lifecycle.
 
 English · [中文](README.md)
+
+<p align="center">
+  <a href="https://github.com/HKUSTDial/Supervisor-Skills/stargazers"><img src="https://img.shields.io/github/stars/HKUSTDial/Supervisor-Skills?style=flat-square&logo=github" alt="GitHub stars"></a>
+  <a href="https://github.com/HKUSTDial/Supervisor-Skills/network/members"><img src="https://img.shields.io/github/forks/HKUSTDial/Supervisor-Skills?style=flat-square&logo=github" alt="GitHub forks"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-lightgrey?style=flat-square" alt="License"></a>
+</p>
+
+## 📰 News
+
+> - **[2026-07-10]** 🚀 **v2.1**: three new skills, `paper-writer` (evidence-gated paper drafting), `paper-polish` (meaning-preserving polishing), and `deep-research` (survey-grade literature investigation); `intro-drafter` now outputs prose; paradigm-aware routing lands in the evaluation and review skills. See the [CHANGELOG](CHANGELOG.md).
+> - **[2026-07-03]** 🎤 Invited talk at the Skill session of the **2026 China Agent Conference**.
+> - **[2026-07-03]** 🧩 New skill `drawio-reconstruction`: rebuild reference figures into editable Draw.io.
+> - **[2026-05-21]** ⭐ Crossed **1,000** GitHub stars, 32 days after release.
+> - **[2026-04-19]** 🎉 Project released: seven anchor skills covering the paper lifecycle, together with the systematic handbook curriculum.
+
+---
 
 ## Why this project?
 
@@ -54,13 +70,13 @@ By joining, you get:
   </tr>
   <tr>
     <td align="center" valign="middle" height="360">
-      <img src="assets/images/wechat-admin.JPG" height="300" />
+      <img src="assets/wechat-admin.JPG" height="300" />
     </td>
     <td align="center" valign="middle" height="360">
-      <img src="assets/images/wechat-official-account.jpg" height="280" />
+      <img src="assets/wechat-official-account.jpg" height="280" />
     </td>
     <td align="center" valign="middle" height="360">
-      <img src="assets/images/wechat-xiebro-research.jpg" height="280" />
+      <img src="assets/wechat-xiebro-research.jpg" height="280" />
     </td>
   </tr>
   <tr>
@@ -112,19 +128,22 @@ Supervisor-Skills/
 │       ├── 6.2_ICLR_2025_AFlow写作剖析.md
 │       └── 6.3_VLDB_2026_LEAD写作剖析.md
 │
-├── docs/en/handbook/                  # 📖 English mirror of the handbook
+├── handbook-en/                       # 📖 English mirror of the handbook
 │
-├── plugins/phd-research/skills/       # 🛠️ Executable AI Skills
+├── skills/                            # 🛠️ Executable AI Skills
 │   ├── idea-evaluator/
+│   ├── deep-research/
 │   ├── vibe-research-workflow/
-│   ├── intro-drafter/
 │   ├── tech-paper-template/
+│   ├── intro-drafter/
+│   ├── paper-writer/
 │   ├── benchmark-paper-template/
+│   ├── paper-polish/
 │   ├── pre-submission-reviewer/
 │   ├── figure-designer/
 │   └── drawio-reconstruction/
 │
-└── assets/images/                     # Image assets
+└── assets/                            # Image assets
 ```
 
 ### 📖 handbook: Research and writing system guide
@@ -135,12 +154,12 @@ This section preserves the systematic theoretical framework for deep reading and
 
 | Chapter | Content | English mirror |
 |---|---|---|
-| **Chapter 1: Macro perspective** | Evaluating paper quality from a reviewer's perspective (Novel Problem, Novel Method, Nice Story, Nice Presentation) | [1.1 How to evaluate paper quality](docs/en/handbook/01_Preliminary/1.1_how-to-evaluate-paper-quality.md) |
-| **Chapter 2: Idea generation** | Idea lifecycle, five-dimension thinking framework (Higher / Faster / Stronger / Cheaper / Broader), disruptive innovation | [2.1 Idea lifecycle](docs/en/handbook/02_Idea_Generation/2.1_idea-lifecycle-and-capability-matching.md) / [2.2 Higher-faster-stronger](docs/en/handbook/02_Idea_Generation/2.2_higher-faster-stronger.md) / [2.3 Disruptive innovation](docs/en/handbook/02_Idea_Generation/2.3_disruptive-innovation.md) |
-| **Chapter 3: Paper writing** | Full paper lifecycle, Introduction flowchart, technical / benchmark paper templates, writing checklist | [3.1 Essentials](docs/en/handbook/03_Paper_Writing/3.1_the-essentials-of-a-research-paper.md) / [3.2 Intro flowchart](docs/en/handbook/03_Paper_Writing/3.2_introduction-writing-flowchart.md) / [3.3 Technical template](docs/en/handbook/03_Paper_Writing/3.3_technical-paper-template.md) / [3.4 Benchmark template](docs/en/handbook/03_Paper_Writing/3.4_benchmark-paper-template.md) / [3.5 Writing checklist](docs/en/handbook/03_Paper_Writing/3.5_writing-details-and-checklist.md) |
-| **Chapter 4: Scientific plotting** | Motivated / overview / results figures and a drawing checklist | [4.1 Motivated example](docs/en/handbook/04_Scientific_Plotting/4.1_motivated-example-figure.md) / [4.2 Solution overview](docs/en/handbook/04_Scientific_Plotting/4.2_solution-overview-figure.md) / [4.3 Experimental results](docs/en/handbook/04_Scientific_Plotting/4.3_experimental-results-figure.md) / [4.4 Checklist](docs/en/handbook/04_Scientific_Plotting/4.4_plotting-checklist-and-tools.md) |
-| **Chapter 5: Vibe Research** | Vibe Research / Coding / Figure / Writing in practice | [5.1 Intro](docs/en/handbook/05_Vibe_Research/5.1_vibe-research-and-vibe-coding.md) / [5.2 Practitioner notes](docs/en/handbook/05_Vibe_Research/5.2_liboyan-practical-notes.md) |
-| **Chapter 6: Top-venue case studies** | Alpha-SQL (ICML'25), AFlow (ICLR'25), LEAD (VLDB'26) Introduction analyses | [6.1 Alpha-SQL](docs/en/handbook/06_Case_Studies/6.1_icml2025-alpha-sql-analysis.md) / [6.2 AFlow](docs/en/handbook/06_Case_Studies/6.2_iclr2025-aflow-analysis.md) / [6.3 LEAD](docs/en/handbook/06_Case_Studies/6.3_vldb2026-lead-analysis.md) |
+| **Chapter 1: Macro perspective** | Evaluating paper quality from a reviewer's perspective (Novel Problem, Novel Method, Nice Story, Nice Presentation) | [1.1 How to evaluate paper quality](handbook-en/01_Preliminary/1.1_how-to-evaluate-paper-quality.md) |
+| **Chapter 2: Idea generation** | Idea lifecycle, five-dimension thinking framework (Higher / Faster / Stronger / Cheaper / Broader), disruptive innovation | [2.1 Idea lifecycle](handbook-en/02_Idea_Generation/2.1_idea-lifecycle-and-capability-matching.md) / [2.2 Higher-faster-stronger](handbook-en/02_Idea_Generation/2.2_higher-faster-stronger.md) / [2.3 Disruptive innovation](handbook-en/02_Idea_Generation/2.3_disruptive-innovation.md) |
+| **Chapter 3: Paper writing** | Full paper lifecycle, Introduction flowchart, technical / benchmark paper templates, writing checklist | [3.1 Essentials](handbook-en/03_Paper_Writing/3.1_the-essentials-of-a-research-paper.md) / [3.2 Intro flowchart](handbook-en/03_Paper_Writing/3.2_introduction-writing-flowchart.md) / [3.3 Technical template](handbook-en/03_Paper_Writing/3.3_technical-paper-template.md) / [3.4 Benchmark template](handbook-en/03_Paper_Writing/3.4_benchmark-paper-template.md) / [3.5 Writing checklist](handbook-en/03_Paper_Writing/3.5_writing-details-and-checklist.md) |
+| **Chapter 4: Scientific plotting** | Motivated / overview / results figures and a drawing checklist | [4.1 Motivated example](handbook-en/04_Scientific_Plotting/4.1_motivated-example-figure.md) / [4.2 Solution overview](handbook-en/04_Scientific_Plotting/4.2_solution-overview-figure.md) / [4.3 Experimental results](handbook-en/04_Scientific_Plotting/4.3_experimental-results-figure.md) / [4.4 Checklist](handbook-en/04_Scientific_Plotting/4.4_plotting-checklist-and-tools.md) |
+| **Chapter 5: Vibe Research** | Vibe Research / Coding / Figure / Writing in practice | [5.1 Intro](handbook-en/05_Vibe_Research/5.1_vibe-research-and-vibe-coding.md) / [5.2 Practitioner notes](handbook-en/05_Vibe_Research/5.2_liboyan-practical-notes.md) |
+| **Chapter 6: Top-venue case studies** | Alpha-SQL (ICML'25), AFlow (ICLR'25), LEAD (VLDB'26) Introduction analyses | [6.1 Alpha-SQL](handbook-en/06_Case_Studies/6.1_icml2025-alpha-sql-analysis.md) / [6.2 AFlow](handbook-en/06_Case_Studies/6.2_iclr2025-aflow-analysis.md) / [6.3 LEAD](handbook-en/06_Case_Studies/6.3_vldb2026-lead-analysis.md) |
 
 The Chinese originals live at [`handbook/`](handbook/) with the same chapter structure.
 
@@ -150,14 +169,17 @@ This is the core of the repository. The theoretical experience above is distille
 
 | Skill | Description | Link |
 |---|---|---|
-| **Idea Evaluator** | Feed in your idea, and the AI scores it on the "Higher / Faster / Stronger" five-dimension framework and the capability-matching table. | [Use skill](plugins/phd-research/skills/idea-evaluator/SKILL.md) |
-| **Vibe Research Guide** | AI-assisted research across the full lifecycle: Vibe Coding / Vibe Figure / Vibe Writing. | [Use skill](plugins/phd-research/skills/vibe-research-workflow/SKILL.md) |
-| **Introduction Drafter** | Based on the Introduction Flowchart thinking model, feed in your research motivation and receive a high-quality Intro outline. | [Use skill](plugins/phd-research/skills/intro-drafter/SKILL.md) |
-| **Tech Paper Template** | Based on the "Technical Full Paper thinking template", walks you through the full logical chain of your paper. | [Use skill](plugins/phd-research/skills/tech-paper-template/SKILL.md) |
-| **Benchmark Paper Template** | Designed for Benchmark/Evaluation papers, helping you structure evaluation logic and experimental design. | [Use skill](plugins/phd-research/skills/benchmark-paper-template/SKILL.md) |
-| **Pre-Submission Reviewer** | Reviewer's perspective at a top venue — runs a full review over your draft based on the writing checklist and common English grammar pitfalls. | [Use skill](plugins/phd-research/skills/pre-submission-reviewer/SKILL.md) |
-| **Figure Design Advisor** | Tell the AI what you want to express; it returns professional drawing advice based on the motivated / overview / experimental figure paradigms. | [Use skill](plugins/phd-research/skills/figure-designer/SKILL.md) |
-| **Draw.io Reconstruction** | Rebuild reference images, paper figures, architecture diagrams, slide diagrams, or UI screenshots into editable `.drawio` files with PNG previews and visual audits. | [Use skill](plugins/phd-research/skills/drawio-reconstruction/SKILL.md) |
+| **Idea Evaluator** | Feed in your idea, and the AI scores it on the "Higher / Faster / Stronger" five-dimension framework and the capability-matching table. | [Use skill](skills/idea-evaluator/SKILL.md) |
+| **Vibe Research Guide** | AI-assisted research across the full lifecycle: Vibe Coding / Vibe Figure / Vibe Writing. | [Use skill](skills/vibe-research-workflow/SKILL.md) |
+| **Introduction Drafter** | Based on the Introduction Flowchart thinking model, feed in your research motivation and receive six paragraphs of Introduction prose with retrieval-verified citations (outline mode on request). | [Use skill](skills/intro-drafter/SKILL.md) |
+| **Paper Writer** | Evidence-gated paper drafting from a single paragraph to a full manuscript: every factual claim traces to your materials or verified literature, citations pass an independent check, nothing is fabricated. | [Use skill](skills/paper-writer/SKILL.md) |
+| **Paper Polish** | Meaning-preserving language polishing: grammar, AI-tone removal, claim calibration, and Chinese-to-English rewriting at submission quality, with meaning-risk edits flagged for your confirmation. | [Use skill](skills/paper-polish/SKILL.md) |
+| **Deep Research** | Survey-grade literature investigation: multi-perspective search, per-citation verification, MECE synthesis with cross-comparison, delivered as a survey report that answers explicit research questions. | [Use skill](skills/deep-research/SKILL.md) |
+| **Tech Paper Template** | Based on the "Technical Full Paper thinking template", walks you through the full logical chain of your paper. | [Use skill](skills/tech-paper-template/SKILL.md) |
+| **Benchmark Paper Template** | Designed for Benchmark/Evaluation papers, helping you structure evaluation logic and experimental design. | [Use skill](skills/benchmark-paper-template/SKILL.md) |
+| **Pre-Submission Reviewer** | Reviewer's perspective at a top venue — runs a full review over your draft based on the writing checklist and common English grammar pitfalls. | [Use skill](skills/pre-submission-reviewer/SKILL.md) |
+| **Figure Design Advisor** | Tell the AI what you want to express; it returns professional drawing advice based on the motivated / overview / experimental figure paradigms. | [Use skill](skills/figure-designer/SKILL.md) |
+| **Draw.io Reconstruction** | Rebuild reference images, paper figures, architecture diagrams, slide diagrams, or UI screenshots into editable `.drawio` files with PNG previews and visual audits. | [Use skill](skills/drawio-reconstruction/SKILL.md) |
 
 ## Quick Start
 

@@ -21,7 +21,7 @@ import re
 import sys
 from pathlib import Path
 
-SKILL_ROOT = Path("plugins/phd-research/skills")
+SKILL_ROOT = Path("skills")
 
 EM_DASH = "\u2014"
 CJK = re.compile(r"[\u3400-\u4dbf\u4e00-\u9fff\u3040-\u30ff\uac00-\ud7af]")
