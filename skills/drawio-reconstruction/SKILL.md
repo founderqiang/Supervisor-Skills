@@ -1,6 +1,6 @@
 ---
 name: drawio-reconstruction
-description: Reconstruct high-fidelity diagrams from one or more reference images into editable Draw.io files, using native Draw.io elements for text and structure, SVG only for simple icons that can match the reference shape and style, cropped/transparent PNG screenshots for complex or style-specific visuals, and background cleanup when crops need repair. Use when the user wants to turn a diagram image, slide image, research figure, architecture diagram, UI screenshot, GPT-image enhanced reference, or folder of diagram images into `.drawio` XML and rendered previews. For any request that includes or resolves to two or more images, detect batch intent first, create the manifest, then start one sub-agent per image before doing per-image reconstruction work.
+description: Reconstructs reference images into high-fidelity, editable Draw.io files with rendered previews: native Draw.io elements carry text and structure, SVG covers only simple icons that match the reference, and cropped or transparent PNGs preserve complex visuals. Use when the user wants a diagram image, research figure, architecture diagram, slide, UI screenshot, or an image folder turned into `.drawio` XML; batch requests of two or more images get a manifest and one sub-agent per image.
 ---
 
 # Draw.io Reconstruction
