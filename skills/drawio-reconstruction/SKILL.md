@@ -1,14 +1,11 @@
 ---
 name: drawio-reconstruction
-description: Reconstructs reference images, research figures, architecture diagrams, slide diagrams, UI screenshots, and image folders into editable Draw.io files with PNG previews and visual audits. Uses native Draw.io elements for text and structure, SVG only for simple matching icons, and crops for complex visuals. Use when the user wants high-fidelity `.drawio` reconstruction from one or more images.
-license: MIT
+description: Reconstruct high-fidelity diagrams from one or more reference images into editable Draw.io files, using native Draw.io elements for text and structure, SVG only for simple icons that can match the reference shape and style, cropped/transparent PNG screenshots for complex or style-specific visuals, and background cleanup when crops need repair. Use when the user wants to turn a diagram image, slide image, research figure, architecture diagram, UI screenshot, GPT-image enhanced reference, or folder of diagram images into `.drawio` XML and rendered previews. For any request that includes or resolves to two or more images, detect batch intent first, create the manifest, then start one sub-agent per image before doing per-image reconstruction work.
 ---
 
 # Draw.io Reconstruction
 
 Use this skill for high-quality reconstruction of diagram images into `.drawio` files.
-
-In command examples, resolve `<skill-dir>` to this skill directory.
 
 ## Fidelity Contract
 
@@ -45,7 +42,7 @@ Parallelism is mandatory for multi-image work when sub-agent tooling is availabl
 2. Create a batch manifest:
 
    ```bash
-   python <skill-dir>/scripts/batch_manifest.py path/to/images --output-dir path/to/output --write
+   python ~/.codex/skills/drawio-reconstruction/scripts/batch_manifest.py path/to/images --output-dir path/to/output --write
    ```
 
 3. Review the manifest before editing. Process only entries in the manifest unless the user expands scope.
@@ -60,7 +57,7 @@ Parallelism is mandatory for multi-image work when sub-agent tooling is availabl
 6. After reconstruction, run batch verification:
 
    ```bash
-   python <skill-dir>/scripts/batch_verify.py path/to/output/drawio_batch_manifest.json
+   python ~/.codex/skills/drawio-reconstruction/scripts/batch_verify.py path/to/output/drawio_batch_manifest.json
    ```
 
 7. The parent must open every exported preview and compare it with the reference. Do not trust worker completion or script success alone.
@@ -193,7 +190,7 @@ When using screenshots:
 - Use the crop helper when possible:
 
   ```bash
-  python <skill-dir>/scripts/crop_assist.py reference.png --roi x,y,w,h --anchor x,y --exclude x,y,w,h --output-dir crops --name icon_name
+  python ~/.codex/skills/drawio-reconstruction/scripts/crop_assist.py reference.png --roi x,y,w,h --anchor x,y --exclude x,y,w,h --output-dir crops --name icon_name
   ```
 
 - Inspect the generated preview and candidates visually before embedding a crop. The script proposes bounds; the model still decides which candidate best matches the reference.
@@ -326,15 +323,15 @@ If the user provides a screenshot with red boxes or annotations:
 Always verify the `.drawio` after edits:
 
 ```bash
-python <skill-dir>/scripts/check_drawio.py path/to/file.drawio
-python <skill-dir>/scripts/export_drawio.py path/to/file.drawio path/to/preview.png
+python ~/.codex/skills/drawio-reconstruction/scripts/check_drawio.py path/to/file.drawio
+python ~/.codex/skills/drawio-reconstruction/scripts/export_drawio.py path/to/file.drawio path/to/preview.png
 ```
 
 For batch jobs:
 
 ```bash
-python <skill-dir>/scripts/batch_manifest.py path/to/images --output-dir path/to/output --write
-python <skill-dir>/scripts/batch_verify.py path/to/output/drawio_batch_manifest.json
+python ~/.codex/skills/drawio-reconstruction/scripts/batch_manifest.py path/to/images --output-dir path/to/output --write
+python ~/.codex/skills/drawio-reconstruction/scripts/batch_verify.py path/to/output/drawio_batch_manifest.json
 ```
 
 The checker catches XML validity and common containment failures; it is not a substitute for visual inspection. After export, inspect the rendered PNG against the reference before final response.
