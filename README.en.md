@@ -18,6 +18,7 @@ English · [中文](README.md)
 
 ## 📰 News
 
+> - **[2026-07-15]** 📱 Our skills are now officially live in **Doubao Office Mode**, powering the "**Research Evaluation**" and "**Academic Writing**" capabilities.
 > - **[2026-07-10]** 🚀 **v2.1**: three new skills, `paper-writer` (evidence-gated paper drafting), `paper-polish` (meaning-preserving polishing), and `deep-research` (survey-grade literature investigation); `intro-drafter` now outputs prose; paradigm-aware routing lands in the evaluation and review skills. See the [CHANGELOG](CHANGELOG.md).
 > - **[2026-07-03]** 🎤 Invited talk at the Skill session of the **2026 China Agent Conference**.
 > - **[2026-07-03]** 🧩 New skill `drawio-reconstruction`: rebuild reference figures into editable Draw.io.
