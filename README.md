@@ -178,13 +178,7 @@ Supervisor-Skills/
 把下方这段 Prompt 发给你的 AI 助手（Claude Code、Cursor、Codex 等）即可完成安装：
 
 ```
-Help me install every skill under the skills/ directory from https://github.com/HKUSTDial/Supervisor-Skills. Treat each directory containing SKILL.md as a separate skill; do not install the repository root as one skill. If you are Codex, use $skill-installer.
-```
-
-如果只安装 Draw.io 重建技能，可直接发送：
-
-```
-Use $skill-installer to install https://github.com/HKUSTDial/Supervisor-Skills/tree/main/skills/drawio-reconstruction.
+Help me install Supervisor-Skills from https://github.com/HKUSTDial/Supervisor-Skills with Skills.
 ```
 
 ## 贡献与反馈
