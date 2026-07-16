@@ -2,7 +2,7 @@
 
 English · [中文](README.md)
 
-If you clicked into this folder, you probably want to know what the "executable core" of Supervisor-Skills actually is. This README is written for you: **use it as a structured research checklist without the plugin, and as a map to what each skill does, when to trigger it, and how the skills chain together when you do install the plugin.**
+If you clicked into this folder, you probably want to know what the "executable core" of Supervisor-Skills actually is. This README is written for you: **use it as a structured research checklist without installing anything, and as a map to what each skill does, when to trigger it, and how the skills chain together after installation as Agent Skills.**
 
 ## Where this README sits in the project
 
@@ -13,7 +13,7 @@ Supervisor-Skills is layered by audience:
 | Top-level [`README.en.md`](../README.en.md) | First-time visitors | Why the project exists, tutorial structure, how to install |
 | [`handbook/`](../handbook/) (Chinese, canonical) / [`handbook-en/`](../handbook-en/) (English mirror) | Readers who want the methodology | Six chapters of research and writing handbook (the theoretical spine) |
 | **This file** | Readers who want the skills directly | **What each of the 11 skills is, when to use it, how it chains with the others** |
-| `SKILL.md` (inside each skill directory) | The plugin / LLMs | Executable spec: integrity gates, output formats, mode options — machine-readable, not optimised for human browsing |
+| `SKILL.md` (inside each skill directory) | Agent runtimes / LLMs | Executable spec: integrity gates, output formats, mode options — machine-readable, not optimised for human browsing |
 
 In one line: **the handbook teaches the way, SKILL.md runs the tool, this README is the bridge between them.**
 
@@ -200,7 +200,7 @@ Each card translates the SKILL.md spec into plain-reader language, adds the matc
 
 ## How to actually use these skills
 
-### With the Claude plugin installed (recommended)
+### Installed as Agent Skills (recommended)
 
 Follow the [Quick Start](../README.en.md#quick-start) in the top-level README. Once installed, natural language triggers are enough, no commands to memorise. The following phrasings route to the matching skill:
 
@@ -216,7 +216,7 @@ Follow the [Quick Start](../README.en.md#quick-start) in the top-level README. O
 - "I am writing a benchmark paper / I am doing an evaluation paper" → `benchmark-paper-template`
 - "how do I use AI to assist my research" → `vibe-research-workflow`
 
-### Without the plugin
+### Without installation
 
 Every `SKILL.md` is itself a readable, structured thinking checklist. You can:
 - Paste SKILL.md into any AI assistant you use (Claude, GPT, DeepSeek, Kimi, and similar) as a system prompt

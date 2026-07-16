@@ -1,6 +1,6 @@
 # Supervisor-Skills
 
-> A PhD-level academic research methodology distilled into seven structured skills, covering the full paper lifecycle (idea evaluation, introduction drafting, technical paper structuring, benchmark paper structuring, figure design, pre-submission review, AI-assisted research workflow). Usable as a standalone Chinese curriculum at `handbook/`, as an English mirror at `handbook-en/`, or as plugin skills under `skills/`.
+> A PhD-level academic research methodology distilled into eleven structured skills, covering research discovery, idea evaluation, paper planning, drafting, polishing, figure design and reconstruction, pre-submission review, and AI-assisted research workflow. Usable as a standalone Chinese curriculum at `handbook/`, as an English mirror at `handbook-en/`, or as Agent Skills under `skills/`.
 
 Target audience: researchers writing papers for NeurIPS, ICML, ICLR, VLDB, SIGMOD, KDD, ACL, EMNLP, CVPR, and similar top venues.
 
@@ -9,7 +9,13 @@ Target audience: researchers writing papers for NeurIPS, ICML, ICLR, VLDB, SIGMO
 Paste the following prompt into your AI assistant:
 
 ```
-Help me install Supervisor-Skills from https://github.com/HKUSTDial/Supervisor-Skills with Skills.
+Help me install every skill under the skills/ directory from https://github.com/HKUSTDial/Supervisor-Skills. Treat each directory containing SKILL.md as a separate skill; do not install the repository root as one skill. If you are Codex, use $skill-installer.
+```
+
+To install only Draw.io reconstruction:
+
+```
+Use $skill-installer to install https://github.com/HKUSTDial/Supervisor-Skills/tree/main/skills/drawio-reconstruction.
 ```
 
 See [README.md](README.md) (Chinese) or [README.en.md](README.en.md) for full details.

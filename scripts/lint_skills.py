@@ -21,6 +21,13 @@ import re
 import sys
 from pathlib import Path
 
+try:
+    import yaml
+except ModuleNotFoundError as exc:
+    raise SystemExit(
+        "PyYAML is required; run 'python -m pip install -r requirements-lint.txt'"
+    ) from exc
+
 SKILL_ROOT = Path("skills")
 
 EM_DASH = "\u2014"
@@ -35,7 +42,7 @@ BANNED_ATTRIB = [
 ]
 
 
-def parse_frontmatter(text: str) -> tuple[dict[str, str], str]:
+def parse_frontmatter(text: str) -> tuple[dict[str, object], str]:
     """Return (frontmatter dict, body). Raises ValueError on malformed."""
     if not text.startswith("---\n"):
         raise ValueError("missing YAML frontmatter opener '---'")
@@ -45,21 +52,18 @@ def parse_frontmatter(text: str) -> tuple[dict[str, str], str]:
     fm_text = text[4:end]
     body = text[end + 5 :]
 
-    fm: dict[str, str] = {}
-    current_key = None
-    current_val: list[str] = []
-    for line in fm_text.splitlines():
-        m = re.match(r"^([a-zA-Z_\-]+):\s*(.*)$", line)
-        if m and not line.startswith(" "):
-            if current_key is not None:
-                fm[current_key] = "\n".join(current_val).strip()
-            current_key = m.group(1)
-            current_val = [m.group(2)]
-        else:
-            current_val.append(line)
-    if current_key is not None:
-        fm[current_key] = "\n".join(current_val).strip()
-    return fm, body
+    try:
+        parsed = yaml.safe_load(fm_text)
+    except yaml.YAMLError as exc:
+        problem = getattr(exc, "problem", None) or str(exc)
+        mark = getattr(exc, "problem_mark", None)
+        location = f" at line {mark.line + 1}, column {mark.column + 1}" if mark else ""
+        raise ValueError(f"invalid YAML frontmatter{location}: {problem}") from exc
+    if not isinstance(parsed, dict):
+        raise ValueError("YAML frontmatter must be a mapping")
+    if not all(isinstance(key, str) for key in parsed):
+        raise ValueError("YAML frontmatter keys must be strings")
+    return parsed, body
 
 
 def check_description(desc: str) -> list[str]:
@@ -168,6 +172,8 @@ def lint_skill(skill_dir: Path) -> list[str]:
 
     if "name" not in fm:
         errors.append(f"{skill_md}: frontmatter missing 'name'")
+    elif not isinstance(fm["name"], str):
+        errors.append(f"{skill_md}: frontmatter 'name' must be a string")
     else:
         if not re.fullmatch(r"[a-z0-9][a-z0-9\-]{0,62}[a-z0-9]", fm["name"]):
             errors.append(
@@ -180,6 +186,8 @@ def lint_skill(skill_dir: Path) -> list[str]:
 
     if "description" not in fm:
         errors.append(f"{skill_md}: frontmatter missing 'description'")
+    elif not isinstance(fm["description"], str):
+        errors.append(f"{skill_md}: frontmatter 'description' must be a string")
     else:
         errors.extend(f"{skill_md}: {e}" for e in check_description(fm["description"]))
 

@@ -187,7 +187,13 @@ This is the core of the repository. The theoretical experience above is distille
 Paste the following prompt into your AI assistant (Claude Code, Cursor, Codex, and similar) to complete the installation:
 
 ```
-Help me install Supervisor-Skills from https://github.com/HKUSTDial/Supervisor-Skills with Skills.
+Help me install every skill under the skills/ directory from https://github.com/HKUSTDial/Supervisor-Skills. Treat each directory containing SKILL.md as a separate skill; do not install the repository root as one skill. If you are Codex, use $skill-installer.
+```
+
+To install only the Draw.io reconstruction skill, use:
+
+```
+Use $skill-installer to install https://github.com/HKUSTDial/Supervisor-Skills/tree/main/skills/drawio-reconstruction.
 ```
 
 ## Contributing & feedback

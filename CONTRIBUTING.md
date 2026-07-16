@@ -14,7 +14,7 @@ The current skill set contains eleven anchor skills under `skills/`: `idea-evalu
 
 Each skill directory at `skills/<name>/` contains:
 
-- `SKILL.md`, English, under 500 lines, with YAML frontmatter (`name`, `description`, optional `license`).
+- `SKILL.md`, English, under 500 lines, with valid YAML frontmatter containing `name` and `description`.
 - `references/*.md`, on-demand depth. Files over 100 lines must begin with a table of contents.
 - Optional `scripts/*.py` for deterministic helpers and `assets/*` for templates.
 
@@ -32,6 +32,7 @@ Each skill directory at `skills/<name>/` contains:
 ## Running the linter
 
 ```bash
+python -m pip install -r requirements-lint.txt
 python scripts/lint_skills.py
 python scripts/check_shared_sync.py
 ```

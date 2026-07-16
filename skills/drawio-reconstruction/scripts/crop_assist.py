@@ -2,10 +2,24 @@
 import argparse
 import json
 import math
+import sys
 from collections import deque
 from pathlib import Path
 
-from PIL import Image, ImageDraw
+
+def load_pillow():
+    try:
+        from PIL import Image, ImageDraw
+    except ModuleNotFoundError as exc:
+        if exc.name != "PIL":
+            raise
+        print(
+            "Pillow is required by crop_assist.py; install it with "
+            "'python -m pip install -r requirements.txt' from the skill directory",
+            file=sys.stderr,
+        )
+        raise SystemExit(2) from exc
+    return Image, ImageDraw
 
 
 def parse_box(value):
@@ -221,9 +235,9 @@ def crop_candidate(image, box):
     return image.crop((x, y, x + w, y + h))
 
 
-def draw_preview(roi_image, candidates, kept, rejected, out_path):
+def draw_preview(roi_image, candidates, kept, rejected, out_path, image_draw):
     preview = roi_image.convert("RGB")
-    draw = ImageDraw.Draw(preview)
+    draw = image_draw.Draw(preview)
     for comp in rejected:
         x, y, w, h = comp["bbox"]
         draw.rectangle((x, y, x + w, y + h), outline="#cccccc", width=1)
@@ -257,12 +271,13 @@ def main():
     parser.add_argument("--threshold", type=float, default=26.0, help="Foreground/background color distance")
     parser.add_argument("--padding", type=float, default=0.07, help="Safe padding ratio around foreground bbox")
     args = parser.parse_args()
+    image, image_draw = load_pillow()
 
     image_path = Path(args.image)
     out_dir = Path(args.output_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    source = Image.open(image_path).convert("RGB")
+    source = image.open(image_path).convert("RGB")
     roi = clamp_box(args.roi, *source.size)
     rx, ry, rw, rh = roi
     excludes = []
@@ -353,7 +368,7 @@ def main():
         cand["file"] = str(crop_path)
 
     preview_path = out_dir / f"{args.name}_preview.png"
-    draw_preview(roi_image, candidates, kept, rejected, preview_path)
+    draw_preview(roi_image, candidates, kept, rejected, preview_path, image_draw)
 
     result = {
         "image": str(image_path.resolve()),

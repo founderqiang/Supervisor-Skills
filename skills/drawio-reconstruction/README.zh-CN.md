@@ -39,6 +39,7 @@ https://github.com/sxy1499894281/VCG-Bench
 | `scripts/check_drawio.py` | 检查 `.drawio` XML 结构、嵌入图像，以及常见重建问题。 |
 | `scripts/export_drawio.py` | 通过 Draw.io Desktop/CLI 将 `.drawio` 导出为 PNG。 |
 | `scripts/crop_assist.py` | 辅助从复杂参考图中裁出局部图像。 |
+| `requirements.txt` | `crop_assist.py` 使用的可选 Pillow 依赖。 |
 | `agents/openai.yaml` | 示例 agent 配置元数据。 |
 | `examples/` | 原始 PNG 输入，以及对应的示例 `.drawio` 文件。 |
 | `assets/` | README 中展示案例所需的图片资源。 |
@@ -79,19 +80,26 @@ examples/data_sci2.drawio
 
 ## 作为 Codex Skill 安装
 
-把这个仓库复制或软链接到你的 Codex skills 目录：
+应安装包含当前 `SKILL.md` 的目录，不要把 Supervisor-Skills 仓库根目录当成一个 skill 安装。使用 Codex 时，可直接发送：
 
-```bash
-mkdir -p ~/.codex/skills
-ln -s /path/to/drawio-reconstruction-skill ~/.codex/skills/drawio-reconstruction
+```text
+Use $skill-installer to install https://github.com/HKUSTDial/Supervisor-Skills/tree/main/skills/drawio-reconstruction.
 ```
 
-之后让 Codex 对某张图，或某个图片文件夹，使用 `drawio-reconstruction` 即可。
+如需手动安装，可把这个 skill 目录复制或软链接到 Codex 的 skill 发现目录：
+
+```bash
+mkdir -p ~/.agents/skills
+ln -s /absolute/path/to/Supervisor-Skills/skills/drawio-reconstruction ~/.agents/skills/drawio-reconstruction
+```
+
+Codex 也支持由 installer 或管理员管理的其他 skill 位置。本 skill 会根据实际安装目录定位辅助脚本，不依赖固定的 home 路径。之后让 Codex 对某张图或图片文件夹使用 `$drawio-reconstruction` 即可。如果新安装的 skill 没有出现，请重启 Codex。
 
 ## 依赖要求
 
 - Codex，或其他能遵循 `SKILL.md` 的 agent。
 - Python 3.10+，用于运行辅助脚本。
+- 仅 `crop_assist.py` 需要 Pillow；在本 skill 目录执行 `python -m pip install -r requirements.txt` 即可安装。
 - Draw.io Desktop/CLI，用于把 `.drawio` 导出为 PNG。
 
 macOS：
@@ -102,12 +110,30 @@ brew install --cask drawio
 
 Ubuntu / Debian：
 
+从官方 [drawio-desktop releases](https://github.com/jgraph/drawio-desktop/releases) 下载匹配平台的 `.deb` 或 AppImage。下载 `.deb` 后可执行：
+
 ```bash
-sudo apt update
-sudo apt install drawio
+sudo apt install ./drawio-amd64-*.deb
 ```
 
-如果脚本没有自动识别到 Draw.io，可为支持该参数的脚本显式传入可执行文件路径，或设置 `DRAWIO_PATH` 环境变量。
+使用 AppImage 或其他非标准安装位置时，赋予执行权限并设置路径：
+
+```bash
+chmod +x /absolute/path/to/drawio.AppImage
+export DRAWIO_PATH=/absolute/path/to/drawio.AppImage
+```
+
+Windows PowerShell：
+
+```powershell
+$env:DRAWIO_PATH = "C:\Program Files\draw.io\draw.io.exe"
+```
+
+`export_drawio.py` 会依次检查 `--drawio-path`、`DRAWIO_PATH`、常见安装位置和 `PATH`。也可以为单次导出显式指定：
+
+```bash
+python scripts/export_drawio.py examples/data_lake.drawio examples/data_lake.preview.png --drawio-path /absolute/path/to/drawio
+```
 
 ## 批处理工作流
 

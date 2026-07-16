@@ -38,6 +38,7 @@ When reproducing, use `examples/<name>.png` as the source image and export the p
 | `scripts/check_drawio.py` | Check `.drawio` XML structure, embedded images, and common reconstruction issues. |
 | `scripts/export_drawio.py` | Export `.drawio` files to PNG using Draw.io Desktop/CLI. |
 | `scripts/crop_assist.py` | Assist with extracting image crops from complex reference diagrams. |
+| `requirements.txt` | Optional Pillow dependency used by `crop_assist.py`. |
 | `agents/openai.yaml` | Example agent configuration metadata. |
 | `examples/` | Original PNG inputs and example reconstructed `.drawio` files. |
 | `assets/` | README case images. |
@@ -78,19 +79,26 @@ examples/data_sci2.drawio
 
 ## Installation As A Codex Skill
 
-Copy or symlink this repository into your Codex skills directory:
+Install the directory that contains this `SKILL.md`, not the Supervisor-Skills repository root. With Codex, the most direct prompt is:
 
-```bash
-mkdir -p ~/.codex/skills
-ln -s /path/to/drawio-reconstruction-skill ~/.codex/skills/drawio-reconstruction
+```text
+Use $skill-installer to install https://github.com/HKUSTDial/Supervisor-Skills/tree/main/skills/drawio-reconstruction.
 ```
 
-Then ask Codex to use `drawio-reconstruction` for a diagram image or a folder of images.
+For a manual user-level installation, copy or symlink this skill directory into a Codex skill discovery location:
+
+```bash
+mkdir -p ~/.agents/skills
+ln -s /absolute/path/to/Supervisor-Skills/skills/drawio-reconstruction ~/.agents/skills/drawio-reconstruction
+```
+
+Codex also supports installer-managed and administrator-managed skill locations. The skill resolves helper scripts from its actual installed directory and does not require a fixed home-directory path. Then ask Codex to use `$drawio-reconstruction` for a diagram image or a folder of images. If a newly installed skill does not appear, restart Codex.
 
 ## Requirements
 
 - Codex or another agent that can follow `SKILL.md`.
 - Python 3.10+ for the helper scripts.
+- Pillow for `crop_assist.py` only. Install it with `python -m pip install -r requirements.txt` from this skill directory.
 - Draw.io Desktop/CLI for exporting `.drawio` files to PNG.
 
 macOS:
@@ -101,12 +109,30 @@ brew install --cask drawio
 
 Ubuntu/Debian:
 
+Download the matching `.deb` or AppImage from the official [drawio-desktop releases](https://github.com/jgraph/drawio-desktop/releases). For a downloaded `.deb`:
+
 ```bash
-sudo apt update
-sudo apt install drawio
+sudo apt install ./drawio-amd64-*.deb
 ```
 
-If Draw.io is not auto-detected, pass the executable path to scripts that support it or set `DRAWIO_PATH`.
+For an AppImage or another non-standard installation, make the file executable and set its path:
+
+```bash
+chmod +x /absolute/path/to/drawio.AppImage
+export DRAWIO_PATH=/absolute/path/to/drawio.AppImage
+```
+
+Windows PowerShell:
+
+```powershell
+$env:DRAWIO_PATH = "C:\Program Files\draw.io\draw.io.exe"
+```
+
+`export_drawio.py` checks `--drawio-path` first, then `DRAWIO_PATH`, common installation paths, and finally `PATH`. An explicit one-off path can be passed as:
+
+```bash
+python scripts/export_drawio.py examples/data_lake.drawio examples/data_lake.preview.png --drawio-path /absolute/path/to/drawio
+```
 
 ## Batch Workflow
 

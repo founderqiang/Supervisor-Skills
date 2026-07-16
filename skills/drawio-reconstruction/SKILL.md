@@ -1,11 +1,17 @@
 ---
 name: drawio-reconstruction
-description: Reconstructs reference images into high-fidelity, editable Draw.io files with rendered previews: native Draw.io elements carry text and structure, SVG covers only simple icons that match the reference, and cropped or transparent PNGs preserve complex visuals. Use when the user wants a diagram image, research figure, architecture diagram, slide, UI screenshot, or an image folder turned into `.drawio` XML; batch requests of two or more images get a manifest and one sub-agent per image.
+description: "Reconstructs reference images into high-fidelity, editable Draw.io files with rendered previews: native Draw.io elements carry text and structure, SVG covers simple icons that match the reference, and cropped or transparent PNGs preserve complex visuals. Use when the user wants a diagram image, research figure, architecture diagram, slide, UI screenshot, or image folder turned into `.drawio` XML; batch requests use a manifest with bounded parallelism when available and a full-fidelity serial fallback otherwise."
 ---
 
 # Draw.io Reconstruction
 
 Use this skill for high-quality reconstruction of diagram images into `.drawio` files.
+
+## Helper Script Location
+
+Resolve `SKILL_DIR` to the absolute directory containing this `SKILL.md` before running any bundled helper. Use the resolved skill location provided by the runtime; never assume the skill is installed under `~/.codex`, `~/.agents`, or any other fixed directory.
+
+All commands below use `$SKILL_DIR` to mean that resolved absolute directory.
 
 ## Fidelity Contract
 
@@ -26,41 +32,39 @@ Never silently rewrite the user's content. If the user asks for larger fonts or 
 
 Use this workflow when the user provides a directory of images or asks for batch reconstruction.
 
-### Batch Intent And Agent Gate
+### Batch Intent And Scheduling
 
 Before opening images for detailed visual analysis, decide whether the request is a batch reconstruction task:
 
 - Treat the request as batch reconstruction when it names a folder, multiple image files, a glob/pattern, or any target that resolves to **2 or more image entries**.
-- For **2 or more image entries**, do not start one-by-one reconstruction or detailed per-image analysis in the parent agent. Create the manifest, then immediately start sub-agents.
-- Assign **one sub-agent per image** by default. Each sub-agent gets exactly one image and an exclusive write set for that image's `.drawio`, exported `.png`, audit file, and private asset/crop directory.
-- The parent agent may briefly inspect thumbnails or file metadata only to confirm scope, naming, orientation, and obvious shared style constraints. It must not reconstruct or deeply audit individual images before the sub-agent split.
-- If no multi-agent/subagent tool is available, report that limitation before continuing; do not silently fall back to serial reconstruction.
-
-Parallelism is mandatory for multi-image work when sub-agent tooling is available. If the request names a folder, multiple image files, or any target that resolves to **2 or more images**, split work across sub-agents after creating the manifest. Do this even if the user does not explicitly say "parallel", "agents", or "batch". The only fallback is an environment with no multi-agent/subagent tool; in that case, report the limitation before continuing.
+- Create and review the manifest before detailed per-image work begins.
+- When sub-agent tooling is available and useful, use a bounded worker pool no larger than the available concurrency and the number of pending images. Give each active worker exactly one image and an exclusive write set for that image's `.drawio`, exported `.png`, audit file, and private asset/crop directory. Reuse a free slot for the next image instead of trying to start every worker at once.
+- When sub-agent tooling is unavailable, disabled, capacity-limited, or unnecessary for a small batch, process entries serially in manifest order. Preserve the same inventory, reconstruction, export, check, and visual-audit requirements.
+- Tell the user about scheduling limitations only when they materially affect timing or delivery. Do not block a valid batch solely because parallel execution is unavailable.
+- The coordinating agent may inspect thumbnails or file metadata to confirm scope, naming, orientation, and shared style constraints before choosing the schedule.
 
 1. Identify the input directory, output directory, naming convention, and overwrite policy.
 2. Create a batch manifest:
 
    ```bash
-   python ~/.codex/skills/drawio-reconstruction/scripts/batch_manifest.py path/to/images --output-dir path/to/output --write
+   python "$SKILL_DIR/scripts/batch_manifest.py" path/to/images --output-dir path/to/output --write
    ```
 
 3. Review the manifest before editing. Process only entries in the manifest unless the user expands scope.
 4. For each image, define the expected `<stem>.drawio`, `<stem>.png`, and lightweight `<stem>.audit.md` outputs in the target output directory.
-5. When the manifest has **2 or more image entries**, immediately split manifest entries into disjoint worker-agent work sets before reconstruction begins:
-   - Start one worker per image.
-   - Assign each worker exclusive output files.
+5. Choose a bounded parallel schedule or a serial schedule:
+   - Assign exclusive output files for each active entry.
    - Tell workers they are not alone in the codebase and must not revert or edit other workers' outputs.
-   - Each worker must follow the same full workflow required for reconstructing that image as a standalone single-image task. Batch mode is only a scheduling strategy; it does not reduce fidelity, inventory, reconstruction, export, check, or visual-audit requirements.
-   - Give each worker this quality gate: produce `.drawio`, `.png`, and `<stem>.audit.md`; create the complete visible-element inventory; classify non-text visuals; use crops/SVG/native elements according to the normal medium rules; run required checks/exports; visually compare the exported preview against the reference; mark unresolved visual defects instead of claiming completion.
-   - The parent agent owns final batch verification, visual inspection, audit review, and the user-facing completion report.
+   - Require every entry to follow the same full workflow as a standalone single-image task. Batch mode is only a scheduling strategy; it does not reduce fidelity, inventory, reconstruction, export, check, or visual-audit requirements.
+   - Apply this quality gate to every entry: produce `.drawio`, `.png`, and `<stem>.audit.md`; create the complete visible-element inventory; classify non-text visuals; use crops/SVG/native elements according to the normal medium rules; run required checks/exports; visually compare the exported preview against the reference; mark unresolved visual defects instead of claiming completion.
+   - Keep final batch verification, visual inspection, audit review, and the user-facing completion report with the coordinating agent.
 6. After reconstruction, run batch verification:
 
    ```bash
-   python ~/.codex/skills/drawio-reconstruction/scripts/batch_verify.py path/to/output/drawio_batch_manifest.json
+   python "$SKILL_DIR/scripts/batch_verify.py" path/to/output/drawio_batch_manifest.json
    ```
 
-7. The parent must open every exported preview and compare it with the reference. Do not trust worker completion or script success alone.
+7. Open every exported preview and compare it with the reference. Do not trust worker completion or script success alone.
 8. Report completed entries, skipped entries, failures, and any images that need review.
 
 Default batch outputs:
@@ -190,10 +194,11 @@ When using screenshots:
 - Use the crop helper when possible:
 
   ```bash
-  python ~/.codex/skills/drawio-reconstruction/scripts/crop_assist.py reference.png --roi x,y,w,h --anchor x,y --exclude x,y,w,h --output-dir crops --name icon_name
+  python "$SKILL_DIR/scripts/crop_assist.py" reference.png --roi x,y,w,h --anchor x,y --exclude x,y,w,h --output-dir crops --name icon_name
   ```
 
 - Inspect the generated preview and candidates visually before embedding a crop. The script proposes bounds; the model still decides which candidate best matches the reference.
+- `crop_assist.py` requires Pillow. If Pillow is unavailable, request approval before changing the environment, then install the bundled optional dependency with `python -m pip install -r "$SKILL_DIR/requirements.txt"`. Do not silently skip crop inspection.
 - Use `--exclude` boxes for nearby elements that are inside the rough ROI but not part of the target artwork, especially bullets, body text, title rules, numbered badges, panel borders, and divider lines.
 - Safe padding should preserve full strokes, arrowheads, shadows, antialiasing, and immediate intentional whitespace. It should not expand into general empty space.
 - Do not crop tightly to visible strokes unless tight cropping is required to avoid neighboring content. A clipped stroke, cut-off arrowhead, missing shadow, or artwork touching the crop edge is a blocking defect.
@@ -323,15 +328,15 @@ If the user provides a screenshot with red boxes or annotations:
 Always verify the `.drawio` after edits:
 
 ```bash
-python ~/.codex/skills/drawio-reconstruction/scripts/check_drawio.py path/to/file.drawio
-python ~/.codex/skills/drawio-reconstruction/scripts/export_drawio.py path/to/file.drawio path/to/preview.png
+python "$SKILL_DIR/scripts/check_drawio.py" path/to/file.drawio
+python "$SKILL_DIR/scripts/export_drawio.py" path/to/file.drawio path/to/preview.png
 ```
 
 For batch jobs:
 
 ```bash
-python ~/.codex/skills/drawio-reconstruction/scripts/batch_manifest.py path/to/images --output-dir path/to/output --write
-python ~/.codex/skills/drawio-reconstruction/scripts/batch_verify.py path/to/output/drawio_batch_manifest.json
+python "$SKILL_DIR/scripts/batch_manifest.py" path/to/images --output-dir path/to/output --write
+python "$SKILL_DIR/scripts/batch_verify.py" path/to/output/drawio_batch_manifest.json
 ```
 
 The checker catches XML validity and common containment failures; it is not a substitute for visual inspection. After export, inspect the rendered PNG against the reference before final response.
